@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0-windows7.0": {
+      "TaskClass/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/TaskClass.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/TaskClass.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "TaskClass/1.0.0": {
+      "type": "project",
+      "path": "../TaskClass/TaskClass.csproj",
+      "msbuildProject": "../TaskClass/TaskClass.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0-windows7.0": [
+      "TaskClass >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\fadel\\.nuget\\packages\\": {}
@@ -13,27 +32,31 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj",
-      "projectName": "TaskClass",
-      "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj",
+      "projectUniqueName": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj",
+      "projectName": "ToDoListApp",
+      "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj",
       "packagesPath": "C:\\Users\\fadel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\obj\\",
+      "outputPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\fadel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net8.0"
+        "net8.0-windows"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
-          "projectReferences": {}
+        "net8.0-windows7.0": {
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {
+            "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj": {
+              "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -48,8 +71,8 @@
       }
     },
     "frameworks": {
-      "net8.0": {
-        "targetAlias": "net8.0",
+      "net8.0-windows7.0": {
+        "targetAlias": "net8.0-windows",
         "imports": [
           "net461",
           "net462",
@@ -64,6 +87,9 @@
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WindowsForms": {
+            "privateAssets": "none"
           }
         },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.404/PortableRuntimeIdentifierGraph.json"

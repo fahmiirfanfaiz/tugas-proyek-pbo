@@ -2,15 +2,8 @@
 {
     partial class Form1
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -20,48 +13,89 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
-
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            lstTasks = new ListBox();
+            txtNewTask = new TextBox();
+            btnAddTask = new Button();
+            btnMarkComplete = new Button();
+            btnRemoveTask = new Button();
+            SuspendLayout();
             // 
-            // label1
+            // lstTasks
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.Font = new System.Drawing.Font("Nulshock Rg", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(1, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1258, 56);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "To Do List";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            lstTasks.FormattingEnabled = true;
+            lstTasks.Location = new Point(16, 18);
+            lstTasks.Margin = new Padding(4, 5, 4, 5);
+            lstTasks.Name = "lstTasks";
+            lstTasks.Size = new Size(479, 344);
+            lstTasks.TabIndex = 0;
+            lstTasks.SelectedIndexChanged += lstTasks_SelectedIndexChanged;
+            // 
+            // txtNewTask
+            // 
+            txtNewTask.Location = new Point(16, 374);
+            txtNewTask.Margin = new Padding(4, 5, 4, 5);
+            txtNewTask.Name = "txtNewTask";
+            txtNewTask.Size = new Size(371, 27);
+            txtNewTask.TabIndex = 1;
+            txtNewTask.TextChanged += txtNewTask_TextChanged;
+            // 
+            // btnAddTask
+            // 
+            btnAddTask.Location = new Point(396, 371);
+            btnAddTask.Margin = new Padding(4, 5, 4, 5);
+            btnAddTask.Name = "btnAddTask";
+            btnAddTask.Size = new Size(100, 35);
+            btnAddTask.TabIndex = 2;
+            btnAddTask.Text = "Add Task";
+            btnAddTask.UseVisualStyleBackColor = true;
+            btnAddTask.Click += btnAddTask_Click;
+            // 
+            // btnMarkComplete
+            // 
+            btnMarkComplete.Location = new Point(16, 414);
+            btnMarkComplete.Margin = new Padding(4, 5, 4, 5);
+            btnMarkComplete.Name = "btnMarkComplete";
+            btnMarkComplete.Size = new Size(236, 35);
+            btnMarkComplete.TabIndex = 3;
+            btnMarkComplete.Text = "Mark Selected as Complete";
+            btnMarkComplete.UseVisualStyleBackColor = true;
+            btnMarkComplete.Click += btnMarkComplete_Click;
+            // 
+            // btnRemoveTask
+            // 
+            btnRemoveTask.Location = new Point(260, 414);
+            btnRemoveTask.Margin = new Padding(4, 5, 4, 5);
+            btnRemoveTask.Name = "btnRemoveTask";
+            btnRemoveTask.Size = new Size(236, 35);
+            btnRemoveTask.TabIndex = 4;
+            btnRemoveTask.Text = "Remove Selected Task";
+            btnRemoveTask.UseVisualStyleBackColor = true;
+            btnRemoveTask.Click += btnRemoveTask_Click;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 664);
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(512, 463);
+            Controls.Add(btnRemoveTask);
+            Controls.Add(btnMarkComplete);
+            Controls.Add(btnAddTask);
+            Controls.Add(txtNewTask);
+            Controls.Add(lstTasks);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "Form1";
+            Text = "To-Do List";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
-        #endregion
-
-        private System.Windows.Forms.Label label1;
-
-        //tes
+        private System.Windows.Forms.ListBox lstTasks;
+        private System.Windows.Forms.TextBox txtNewTask;
+        private System.Windows.Forms.Button btnAddTask;
+        private System.Windows.Forms.Button btnMarkComplete;
+        private System.Windows.Forms.Button btnRemoveTask;
     }
 }
 

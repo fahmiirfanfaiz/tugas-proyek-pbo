@@ -1,0 +1,12 @@
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.deps.json
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.pdb
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.AssemblyInfoInputs.cache
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.AssemblyInfo.cs
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.csproj.CoreCompileInputs.cache
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.sourcelink.json
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\refint\TaskClass.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.pdb
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\ref\TaskClass.dll
