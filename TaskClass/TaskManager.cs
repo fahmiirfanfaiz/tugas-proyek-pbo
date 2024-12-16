@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -16,9 +17,9 @@ namespace TaskClass
             nextId = 1;
         }
 
-        public void AddTask(string description)
+        public void AddTask(string description, DateTime dueDate, string category)
         {
-            TaskToDo newTask = new TaskToDo(nextId++, description);
+            TaskToDo newTask = new TaskToDo(nextId++, description, dueDate, category);
             tasks.Add(newTask);
         }
 

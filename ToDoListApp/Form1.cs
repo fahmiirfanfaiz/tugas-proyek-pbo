@@ -17,15 +17,15 @@ namespace ToDoListApp
 
         private void btnAddTask_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNewTask.Text))
+            var inputForm = new FormInputTask();
+            if (inputForm.ShowDialog() == DialogResult.OK)
             {
-                taskManager.AddTask(txtNewTask.Text);
-                txtNewTask.Clear();
+                taskManager.AddTask(
+                    inputForm.Task.Description,
+                    inputForm.Task.DueDate,
+                    inputForm.Task.Category
+                );
                 RefreshTaskList();
-            }
-            else
-            {
-                MessageBox.Show("Please enter a task description.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -62,7 +62,7 @@ namespace ToDoListApp
             lstTasks.Items.Clear();
             foreach (var task in taskManager.GetAllTasks())
             {
-                lstTasks.Items.Add(task);
+                lstTasks.Items.Add(task.ToString());
             }
         }
 
