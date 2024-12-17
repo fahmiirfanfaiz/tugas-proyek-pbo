@@ -5,6 +5,7 @@
         private System.ComponentModel.IContainer components = null;
 
         // Members UI
+        private System.Windows.Forms.TextBox txtNameTask;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.DateTimePicker dateTimePickerDueDate;
         private System.Windows.Forms.ComboBox comboBoxCategory;
@@ -22,53 +23,79 @@
 
         private void InitializeComponent()
         {
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.dateTimePickerDueDate = new System.Windows.Forms.DateTimePicker();
-            this.comboBoxCategory = new System.Windows.Forms.ComboBox();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-
-            // Form Properties
-            this.SuspendLayout();
-            this.Text = "Add New Task";
-            this.ClientSize = new System.Drawing.Size(300, 200);
-
+            txtNameTask = new TextBox();
+            txtDescription = new TextBox();
+            dateTimePickerDueDate = new DateTimePicker();
+            comboBoxCategory = new ComboBox();
+            btnSave = new Button();
+            btnCancel = new Button();
+            SuspendLayout();
+            // 
+            // txtNameTask
+            // 
+            txtNameTask.Location = new Point(20, 20);
+            txtNameTask.Name = "txtNameTask";
+            txtNameTask.PlaceholderText = "Enter task...";
+            txtNameTask.Size = new Size(250, 27);
+            txtNameTask.TabIndex = 0;
+            txtNameTask.TextChanged += txtNameTask_TextChanged;
+            // 
             // txtDescription
-            this.txtDescription.Location = new System.Drawing.Point(20, 20);
-            this.txtDescription.Size = new System.Drawing.Size(250, 20);
-            this.txtDescription.PlaceholderText = "Enter task description...";
-
+            // 
+            txtDescription.Location = new Point(20, 50);
+            txtDescription.Name = "txtDescription";
+            txtDescription.PlaceholderText = "Enter task description...";
+            txtDescription.Size = new Size(250, 27);
+            txtDescription.TabIndex = 0;
+            txtDescription.TextChanged += txtDescription_TextChanged;
+            // 
             // dateTimePickerDueDate
-            this.dateTimePickerDueDate.Location = new System.Drawing.Point(20, 50);
-            this.dateTimePickerDueDate.Size = new System.Drawing.Size(250, 20);
-
+            // 
+            dateTimePickerDueDate.Location = new Point(20, 80);
+            dateTimePickerDueDate.Name = "dateTimePickerDueDate";
+            dateTimePickerDueDate.Size = new Size(250, 27);
+            dateTimePickerDueDate.TabIndex = 1;
+            // 
             // comboBoxCategory
-            this.comboBoxCategory.Items.AddRange(new string[] { "Work", "Personal", "School", "Other" });
-            this.comboBoxCategory.Location = new System.Drawing.Point(20, 80);
-            this.comboBoxCategory.Size = new System.Drawing.Size(250, 21);
-            this.comboBoxCategory.SelectedIndex = 0;
-
+            // 
+            comboBoxCategory.Items.AddRange(new object[] { "Work", "Personal", "School", "Other" });
+            comboBoxCategory.Location = new Point(20, 110);
+            comboBoxCategory.Name = "comboBoxCategory";
+            comboBoxCategory.Size = new Size(250, 28);
+            comboBoxCategory.TabIndex = 2;
+            // 
             // btnSave
-            this.btnSave.Location = new System.Drawing.Point(50, 120);
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.Text = "Save";
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-
+            // 
+            btnSave.Location = new Point(50, 150);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(75, 33);
+            btnSave.TabIndex = 3;
+            btnSave.Text = "Save";
+            btnSave.Click += btnSave_Click;
+            // 
             // btnCancel
-            this.btnCancel.Location = new System.Drawing.Point(150, 120);
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-
-            // Add Controls
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.dateTimePickerDueDate);
-            this.Controls.Add(this.comboBoxCategory);
-            this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.btnCancel);
-
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            // 
+            btnCancel.Location = new Point(150, 150);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new Size(75, 33);
+            btnCancel.TabIndex = 4;
+            btnCancel.Text = "Cancel";
+            btnCancel.Click += btnCancel_Click;
+            // 
+            // FormInputTask
+            // 
+            ClientSize = new Size(300, 200);
+            Controls.Add(txtNameTask);
+            Controls.Add(txtDescription);
+            Controls.Add(dateTimePickerDueDate);
+            Controls.Add(comboBoxCategory);
+            Controls.Add(btnSave);
+            Controls.Add(btnCancel);
+            Name = "FormInputTask";
+            Text = "Add New Task";
+            Load += FormInputTask_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
     }
 }

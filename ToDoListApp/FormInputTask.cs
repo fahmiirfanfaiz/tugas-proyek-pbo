@@ -25,6 +25,7 @@ namespace ToDoListApp
 
             Task = new TaskToDo(
                 id: 0,
+                nameTask: txtNameTask.Text,
                 description: txtDescription.Text,
                 dueDate: dateTimePickerDueDate.Value,
                 category: comboBoxCategory.SelectedItem.ToString()
@@ -38,6 +39,21 @@ namespace ToDoListApp
         {
             this.DialogResult = DialogResult.Cancel;
             this.Close();
+        }
+
+        private void FormInputTask_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNameTask_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

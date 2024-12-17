@@ -1,6 +1,9 @@
 using System;
 using System.Windows.Forms;
 using TaskClass;
+using MongoDB.Driver;
+using MongoDB.Bson;
+
 
 namespace ToDoListApp
 {
@@ -21,6 +24,7 @@ namespace ToDoListApp
             if (inputForm.ShowDialog() == DialogResult.OK)
             {
                 taskManager.AddTask(
+                    inputForm.Task.NameTask,
                     inputForm.Task.Description,
                     inputForm.Task.DueDate,
                     inputForm.Task.Category
@@ -64,11 +68,6 @@ namespace ToDoListApp
             {
                 lstTasks.Items.Add(task.ToString());
             }
-        }
-
-        private void txtNewTask_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void lstTasks_SelectedIndexChanged(object sender, EventArgs e)

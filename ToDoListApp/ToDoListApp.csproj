@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="3.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\TaskClass\TaskClass.csproj" />
   </ItemGroup>
 

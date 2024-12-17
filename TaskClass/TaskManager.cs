@@ -17,9 +17,9 @@ namespace TaskClass
             nextId = 1;
         }
 
-        public void AddTask(string description, DateTime dueDate, string category)
+        public void AddTask(string nameTask, string description, DateTime dueDate, string category)
         {
-            TaskToDo newTask = new TaskToDo(nextId++, description, dueDate, category);
+            TaskToDo newTask = new TaskToDo(nextId++, nameTask, description, dueDate, category);
             tasks.Add(newTask);
         }
 

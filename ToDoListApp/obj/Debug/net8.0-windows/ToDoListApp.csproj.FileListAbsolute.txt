@@ -40,3 +40,11 @@ D:\Tugas PBO\Proyek Akhir\To-Do List\ToDoListApp\obj\Debug\net8.0-windows\refint
 D:\Tugas PBO\Proyek Akhir\To-Do List\ToDoListApp\obj\Debug\net8.0-windows\ToDoListApp.pdb
 D:\Tugas PBO\Proyek Akhir\To-Do List\ToDoListApp\obj\Debug\net8.0-windows\ToDoListApp.genruntimeconfig.cache
 D:\Tugas PBO\Proyek Akhir\To-Do List\ToDoListApp\obj\Debug\net8.0-windows\ref\ToDoListApp.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\DnsClient.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\MongoDB.Bson.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\MongoDB.Driver.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\SharpCompress.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\Snappier.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\ZstdSharp.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\obj\Debug\net8.0-windows\ToDoListApp.FormInputTask.resources
