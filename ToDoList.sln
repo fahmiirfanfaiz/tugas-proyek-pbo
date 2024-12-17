@@ -5,7 +5,7 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskClass", "TaskClass\TaskClass.csproj", "{61CB85E2-7FFF-482A-A5F6-A846F49A9501}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListApp", "ToDoListApp\ToDoListApp.csproj", "{17D61471-286E-4AB7-BD19-39E8027C5F11}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListApp", "ToDoListApp\ToDoListApp.csproj", "{17D61471-286E-4AB7-BD19-39E8027C5F11}"
 	ProjectSection(ProjectDependencies) = postProject
 		{61CB85E2-7FFF-482A-A5F6-A846F49A9501} = {61CB85E2-7FFF-482A-A5F6-A846F49A9501}
 	EndProjectSection
