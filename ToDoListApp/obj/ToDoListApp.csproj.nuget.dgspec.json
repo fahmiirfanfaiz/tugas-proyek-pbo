@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj": {}
+    "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\ToDoListApp\\ToDoListApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj": {
+    "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\TaskClass\\TaskClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj",
+        "projectUniqueName": "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\TaskClass\\TaskClass.csproj",
         "projectName": "TaskClass",
-        "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj",
-        "packagesPath": "C:\\Users\\fadel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\obj\\",
+        "projectPath": "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\TaskClass\\TaskClass.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\TaskClass\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\fadel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -64,17 +69,21 @@
         }
       }
     },
-    "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj": {
+    "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\ToDoListApp\\ToDoListApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj",
+        "projectUniqueName": "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\ToDoListApp\\ToDoListApp.csproj",
         "projectName": "ToDoListApp",
-        "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj",
-        "packagesPath": "C:\\Users\\fadel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\obj\\",
+        "projectPath": "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\ToDoListApp\\ToDoListApp.csproj",
+        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
+        "outputPath": "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\ToDoListApp\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\fadel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,14 +91,15 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj": {
-                "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj"
+              "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\TaskClass\\TaskClass.csproj": {
+                "projectPath": "D:\\Tugas PBO\\Proyek Akhir\\To-Do List\\TaskClass\\TaskClass.csproj"
               }
             }
           }
