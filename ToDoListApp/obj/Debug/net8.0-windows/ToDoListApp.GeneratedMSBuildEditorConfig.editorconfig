@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ToDoListApp
-build_property.ProjectDir = C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\
+build_property.ProjectDir = D:\Tugas PBO\Proyek Akhir\To-Do List\ToDoListApp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
