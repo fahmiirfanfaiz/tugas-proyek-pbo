@@ -3230,23 +3230,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\fadel\\.nuget\\packages\\": {},
+    "C:\\Users\\User\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo10\\TaskClass\\TaskClass.csproj",
       "projectName": "TaskClass",
-      "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj",
-      "packagesPath": "C:\\Users\\fadel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\obj\\",
+      "projectPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo10\\TaskClass\\TaskClass.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo10\\TaskClass\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\fadel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3255,6 +3255,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
