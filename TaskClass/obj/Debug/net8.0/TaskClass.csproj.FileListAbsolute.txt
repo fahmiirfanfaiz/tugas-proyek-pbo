@@ -22,3 +22,6 @@ D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.dll
 D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\refint\TaskClass.dll
 D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.pdb
 D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\ref\TaskClass.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.csproj.AssemblyReference.cache
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.runtimeconfig.json
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.genruntimeconfig.cache

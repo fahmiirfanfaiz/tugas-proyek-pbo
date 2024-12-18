@@ -1,50 +1,55 @@
-﻿using Microsoft.VisualBasic;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using TaskClass;
 
-
-namespace TaskClass
+namespace ToDoListApp
 {
     public class TaskManager
     {
-        private List<TaskToDo> tasks;
-        private int nextId;
+        private readonly ToDoDbContext _context;
 
         public TaskManager()
         {
-            tasks = new List<TaskToDo>();
-            nextId = 1;
+            _context = new ToDoDbContext();
         }
 
-        public void AddTask(string nameTask, string description, DateTime dueDate, string category)
+        public void AddTask(string name, string description, DateTime dueDate, string category)
         {
-            TaskToDo newTask = new TaskToDo(nextId++, nameTask, description, dueDate, category);
-            tasks.Add(newTask);
-        }
-
-        public void MarkTaskAsComplete(int id)
-        {
-            TaskToDo task = tasks.Find(t => t.Id == id);
-            if (task != null)
+            var task = new TaskToDo // Gunakan constructor default dan inisialisasi properti.
             {
-                task.IsComplete = true;
-            }
+                NameTask = name,
+                Description = description,
+                DueDate = dueDate,
+                Category = category,
+                IsComplete = false
+            };
+            _context.Tasks.Add(task);
+            _context.SaveChanges();
         }
 
         public List<TaskToDo> GetAllTasks()
         {
-            return tasks.ToList();
+            return _context.Tasks.ToList();
+        }
+
+        public void MarkTaskAsComplete(int id)
+        {
+            var task = _context.Tasks.Find(id);
+            if (task != null)
+            {
+                task.IsComplete = true;
+                _context.SaveChanges();
+            }
         }
 
         public void RemoveTask(int id)
         {
-            TaskToDo task = tasks.Find(t => t.Id == id);
+            var task = _context.Tasks.Find(id);
             if (task != null)
             {
-                tasks.Remove(task);
+                _context.Tasks.Remove(task);
+                _context.SaveChanges();
             }
         }
     }
 }
-

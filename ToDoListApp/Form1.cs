@@ -1,8 +1,6 @@
 using System;
 using System.Windows.Forms;
 using TaskClass;
-using MongoDB.Driver;
-using MongoDB.Bson;
 
 
 namespace ToDoListApp
