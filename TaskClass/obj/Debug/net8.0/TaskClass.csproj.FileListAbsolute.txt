@@ -40,3 +40,18 @@ C:\Users\User\Source\Repos\tugas-proyek-pbo10\TaskClass\obj\Debug\net8.0\refint\
 C:\Users\User\Source\Repos\tugas-proyek-pbo10\TaskClass\obj\Debug\net8.0\TaskClass.pdb
 C:\Users\User\Source\Repos\tugas-proyek-pbo10\TaskClass\obj\Debug\net8.0\TaskClass.genruntimeconfig.cache
 C:\Users\User\Source\Repos\tugas-proyek-pbo10\TaskClass\obj\Debug\net8.0\ref\TaskClass.dll
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\bin\Debug\net8.0\TaskClass.deps.json
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\bin\Debug\net8.0\TaskClass.runtimeconfig.json
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\bin\Debug\net8.0\TaskClass.dll
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\bin\Debug\net8.0\TaskClass.pdb
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.csproj.AssemblyReference.cache
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.GeneratedMSBuildEditorConfig.editorconfig
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.AssemblyInfoInputs.cache
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.AssemblyInfo.cs
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.csproj.CoreCompileInputs.cache
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.sourcelink.json
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.dll
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\refint\TaskClass.dll
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.pdb
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.genruntimeconfig.cache
+D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\ref\TaskClass.dll
