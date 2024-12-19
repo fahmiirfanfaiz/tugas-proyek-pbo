@@ -79,7 +79,43 @@ namespace ToDoListApp
 
         private void Edit_Click(object sender, EventArgs e)
         {
+            if (lstTasks.SelectedItem != null)
+            {
+                // Retrieve the selected task
+                TaskToDo selectedTask = (TaskToDo)lstTasks.SelectedItem;
 
+                // Open FormInputTask with the selected task data
+                var inputForm = new FormInputTask
+                {
+                    Task = new TaskToDo(
+                        selectedTask.Id,
+                        selectedTask.NameTask,
+                        selectedTask.Description,
+                        selectedTask.DueDate ?? DateTime.Today, // Convert nullable to non-nullable
+                        selectedTask.Category
+                    )
+                };
+
+                if (inputForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Update the task with the new data
+                    taskManager.EditTask(
+                        selectedTask.Id,
+                        inputForm.Task.NameTask,
+                        inputForm.Task.Description ?? null,
+                        inputForm.Task.DueDate ?? DateTime.Today, // Convert nullable to non-nullable
+                        inputForm.Task.Category
+                    );
+
+                    RefreshTaskList();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a task to edit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
     }
 }

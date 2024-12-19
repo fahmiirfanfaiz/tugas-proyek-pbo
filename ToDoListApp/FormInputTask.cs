@@ -7,14 +7,19 @@ namespace ToDoListApp
 {
     public partial class FormInputTask : Form
     {
-        public TaskToDo Task { get; private set; }
+        public TaskToDo Task { get; set; }
 
         public FormInputTask()
         {
             InitializeComponent();
+            InitializeFormFields();
+        }
+
+        private void InitializeFormFields()
+        {
             comboBoxCategory.Items.AddRange(new string[] { "Personal", "Work", "School", "Other" });
             comboBoxCategory.SelectedIndex = 0; // Default category
-            dateTimePickerDueDate.ShowCheckBox = true; // Allow null value for DueDate
+            dateTimePickerDueDate.ShowCheckBox = true;
         }
 
         // Method to validate input fields

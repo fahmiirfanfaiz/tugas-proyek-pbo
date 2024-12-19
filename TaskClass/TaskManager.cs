@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using TaskClass.Models;
 
 namespace TaskClass
@@ -27,6 +28,19 @@ namespace TaskClass
             _context.SaveChanges();
         }
 
+        public void EditTask(int id, string newNameTask, string newDescription, DateTime newDueDate, string newCategory)
+        {
+            var task = _context.TaskToDos.Find(id); // Use _context.TaskToDos to find the task by ID
+            if (task != null)
+            {
+                task.NameTask = newNameTask;
+                task.Description = newDescription;
+                task.DueDate = newDueDate;
+                task.Category = newCategory;
+                _context.SaveChanges(); // Save changes to the database
+            }
+        }
+
         public void MarkTaskAsComplete(int id)
         {
             var task = _context.TaskToDos.Find(id);
@@ -49,7 +63,7 @@ namespace TaskClass
 
         public List<TaskToDo> GetAllTasks()
         {
-            return _context.TaskToDos.ToList();
+            return tasks.ToList();
         }
     }
 }

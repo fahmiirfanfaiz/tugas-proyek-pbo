@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To-Do List\\TaskClass\\TaskClass.csproj": {}
+    "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo16\\TaskClass\\TaskClass.csproj": {}
   },
   "projects": {
-    "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To-Do List\\TaskClass\\TaskClass.csproj": {
+    "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo16\\TaskClass\\TaskClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To-Do List\\TaskClass\\TaskClass.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo16\\TaskClass\\TaskClass.csproj",
         "projectName": "TaskClass",
-        "projectPath": "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To-Do List\\TaskClass\\TaskClass.csproj",
-        "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-        "outputPath": "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To-Do List\\TaskClass\\obj\\",
+        "projectPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo16\\TaskClass\\TaskClass.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo16\\TaskClass\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -91,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
