@@ -14,10 +14,10 @@ namespace TaskClass
         public string NameTask { get; set; }
 
         // Deskripsi task (opsional)
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         // Tanggal jatuh tempo
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         // Kategori task
         public string Category { get; set; }

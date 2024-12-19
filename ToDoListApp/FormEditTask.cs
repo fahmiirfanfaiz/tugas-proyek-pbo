@@ -19,8 +19,8 @@ namespace ToDoListApp
 
             // Set data to input fields
             txtNameTask.Text = task.NameTask;
-            txtDescription.Text = task.Description;
-            dateTimePickerDueDate.Value = task.DueDate;
+            txtDescription.Text = task.Description ?? null;
+            dateTimePickerDueDate.Value = task.DueDate ?? DateTime.Now;
             comboBoxCategory.Text = task.Category;
 
             // Set button texts for clarity
@@ -37,8 +37,8 @@ namespace ToDoListApp
 
             // Update the task data with the values from the input fields
             currentTask.NameTask = txtNameTask.Text;
-            currentTask.Description = txtDescription.Text;
-            currentTask.DueDate = dateTimePickerDueDate.Value;
+            currentTask.Description = string.IsNullOrWhiteSpace(txtDescription.Text) ? null : txtDescription.Text;
+            currentTask.DueDate = dateTimePickerDueDate.Checked ? dateTimePickerDueDate.Value : (DateTime?)null;
             currentTask.Category = comboBoxCategory.Text;
 
             // Trigger event callback to notify that the task has been edited
@@ -67,11 +67,6 @@ namespace ToDoListApp
             if (string.IsNullOrWhiteSpace(txtNameTask.Text))
             {
                 MessageBox.Show("Task name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            if (dateTimePickerDueDate.Value < DateTime.Now)
-            {
-                MessageBox.Show("Due date cannot be in the past.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;

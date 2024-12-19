@@ -13,23 +13,34 @@ namespace ToDoListApp
             InitializeComponent();
             comboBoxCategory.Items.AddRange(new string[] { "Personal", "Work", "School", "Other" });
             comboBoxCategory.SelectedIndex = 0; // Default kategori
+            dateTimePickerDueDate.ShowCheckBox = true;
+        }
+
+        // Method to validate input fields
+        private bool ValidateInput()
+        {
+            if (string.IsNullOrWhiteSpace(txtNameTask.Text))
+            {
+                MessageBox.Show("Task name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtDescription.Text))
-            {
-                MessageBox.Show("Please enter a task description.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            // Validate the input fields before saving
+            if (!ValidateInput())
                 return;
-            }
 
-            Task = new TaskToDo(
-                id: 0,
-                nameTask: txtNameTask.Text,
-                description: txtDescription.Text,
-                dueDate: dateTimePickerDueDate.Value,
-                category: comboBoxCategory.SelectedItem.ToString()
-            );
+            // Create a new task with the values from the input fields
+            Task = new TaskToDo
+            {
+                NameTask = txtNameTask.Text,
+                Description = string.IsNullOrWhiteSpace(txtDescription.Text) ? null : txtDescription.Text,
+                DueDate = dateTimePickerDueDate.Checked ? dateTimePickerDueDate.Value : (DateTime?)null,
+                Category = comboBoxCategory.Text
+            };
 
             this.DialogResult = DialogResult.OK;
             this.Close();

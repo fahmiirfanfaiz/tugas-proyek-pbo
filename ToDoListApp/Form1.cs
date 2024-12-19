@@ -22,8 +22,8 @@ namespace ToDoListApp
             {
                 taskManager.AddTask(
                     inputForm.Task.NameTask,
-                    inputForm.Task.Description,
-                    inputForm.Task.DueDate,
+                    inputForm.Task.Description ?? null,
+                    inputForm.Task.DueDate ?? DateTime.Today,
                     inputForm.Task.Category
                 );
                 RefreshTaskList();
