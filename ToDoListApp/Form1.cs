@@ -2,7 +2,6 @@ using System;
 using System.Windows.Forms;
 using TaskClass;
 
-
 namespace ToDoListApp
 {
     public partial class Form1 : Form
@@ -64,7 +63,7 @@ namespace ToDoListApp
             lstTasks.Items.Clear();
             foreach (var task in taskManager.GetAllTasks())
             {
-                lstTasks.Items.Add(task.ToString());
+                lstTasks.Items.Add(task);
             }
         }
 
@@ -75,9 +74,7 @@ namespace ToDoListApp
 
         private void Edit_Click(object sender, EventArgs e)
         {
-                
-        }
 
+        }
     }
 }
-

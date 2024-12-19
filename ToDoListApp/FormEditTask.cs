@@ -76,5 +76,10 @@ namespace ToDoListApp
             }
             return true;
         }
+
+        private void FormEditTask_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -462,3 +462,12 @@ D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do L
 D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\ToDoListApp\obj\Debug\net8.0-windows\ToDoListApp.pdb
 D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\ToDoListApp\obj\Debug\net8.0-windows\ToDoListApp.genruntimeconfig.cache
 D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\ToDoListApp\obj\Debug\net8.0-windows\ref\ToDoListApp.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\EntityFramework.SqlServer.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\EntityFramework.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\System.Data.SqlClient.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\obj\Debug\net8.0-windows\ToDoListApp.FormEditTask.resources
