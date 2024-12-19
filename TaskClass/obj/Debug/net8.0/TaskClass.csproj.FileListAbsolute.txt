@@ -1,15 +1,3 @@
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.deps.json
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.dll
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.pdb
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.AssemblyInfoInputs.cache
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.AssemblyInfo.cs
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.csproj.CoreCompileInputs.cache
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.sourcelink.json
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.dll
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\refint\TaskClass.dll
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.pdb
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\ref\TaskClass.dll
 D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\bin\Debug\net8.0\TaskClass.deps.json
 D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\bin\Debug\net8.0\TaskClass.dll
 D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\bin\Debug\net8.0\TaskClass.pdb
@@ -22,9 +10,6 @@ D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.dll
 D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\refint\TaskClass.dll
 D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.pdb
 D:\Tugas PBO\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\ref\TaskClass.dll
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.csproj.AssemblyReference.cache
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.runtimeconfig.json
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.genruntimeconfig.cache
 C:\Users\User\Source\Repos\tugas-proyek-pbo10\TaskClass\bin\Debug\net8.0\TaskClass.deps.json
 C:\Users\User\Source\Repos\tugas-proyek-pbo10\TaskClass\bin\Debug\net8.0\TaskClass.runtimeconfig.json
 C:\Users\User\Source\Repos\tugas-proyek-pbo10\TaskClass\bin\Debug\net8.0\TaskClass.dll
@@ -55,3 +40,18 @@ D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do L
 D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.pdb
 D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\TaskClass.genruntimeconfig.cache
 D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To-Do List\TaskClass\obj\Debug\net8.0\ref\TaskClass.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.deps.json
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.runtimeconfig.json
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\bin\Debug\net8.0\TaskClass.pdb
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.csproj.AssemblyReference.cache
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.AssemblyInfoInputs.cache
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.AssemblyInfo.cs
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.csproj.CoreCompileInputs.cache
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.sourcelink.json
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\refint\TaskClass.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.pdb
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\TaskClass.genruntimeconfig.cache
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\TaskClass\obj\Debug\net8.0\ref\TaskClass.dll

@@ -1,6 +1,8 @@
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Windows.Forms;
 using TaskClass;
+using TaskClass.Models;
 
 namespace ToDoListApp
 {
@@ -11,7 +13,10 @@ namespace ToDoListApp
         public Form1()
         {
             InitializeComponent();
-            taskManager = new TaskManager();
+            var optionsBuilder = new DbContextOptionsBuilder<ToDoListDbContext>();
+            optionsBuilder.UseSqlServer("Data Source=LAPTOP-2D8G3I8L\\SQLEXPRESS;Initial Catalog=ToDoListDB;Integrated Security=True;Pooling=False;Encrypt=False;Trust Server Certificate=True");
+            var context = new ToDoListDbContext(optionsBuilder.Options);
+            taskManager = new TaskManager(context);
             RefreshTaskList();
         }
 
