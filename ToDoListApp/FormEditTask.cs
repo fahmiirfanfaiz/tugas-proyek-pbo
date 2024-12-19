@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using TaskClass;
+using TaskClass.Models;
 
 namespace ToDoListApp
 {
@@ -19,8 +20,9 @@ namespace ToDoListApp
 
             // Set data to input fields
             txtNameTask.Text = task.NameTask;
-            txtDescription.Text = task.Description ?? null;
+            txtDescription.Text = task.Description ?? string.Empty;
             dateTimePickerDueDate.Value = task.DueDate ?? DateTime.Now;
+            dateTimePickerDueDate.Checked = task.DueDate.HasValue;
             comboBoxCategory.Text = task.Category;
 
             // Set button texts for clarity
@@ -78,3 +80,4 @@ namespace ToDoListApp
         }
     }
 }
+

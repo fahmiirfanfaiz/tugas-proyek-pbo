@@ -1,59 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
+using TaskClass.Models;
 
 namespace TaskClass
 {
     public class TaskManager
     {
-        private List<TaskToDo> tasks;
-        private int nextId;
+        private readonly ToDoListDbContext _context;
 
-        public TaskManager()
+        public TaskManager(ToDoListDbContext context)
         {
-            tasks = new List<TaskToDo>();
-            nextId = 1;
+            _context = context;
         }
 
-        public void AddTask(string nameTask, string description, DateTime dueDate, string category)
+        public void AddTask(string nameTask, string description, DateTime? dueDate, string category)
         {
-            var newTask = new TaskToDo(nextId++, nameTask, description, dueDate, category);
-            tasks.Add(newTask);
-        }
-
-        public void EditTask(int id, string newNameTask, string newDescription, DateTime newDueDate, string newCategory)
-        {
-            var task = tasks.Find(t => t.Id == id);
-            if (task != null)
+            var task = new TaskToDo
             {
-                task.NameTask = newNameTask;
-                task.Description = newDescription;
-                task.DueDate = newDueDate;
-                task.Category = newCategory;
-            }
+                NameTask = nameTask,
+                Description = description,
+                DueDate = dueDate,
+                Category = category,
+                IsComplete = false
+            };
+            _context.TaskToDos.Add(task);
+            _context.SaveChanges();
         }
 
         public void MarkTaskAsComplete(int id)
         {
-            var task = tasks.Find(t => t.Id == id);
+            var task = _context.TaskToDos.Find(id);
             if (task != null)
             {
                 task.IsComplete = true;
+                _context.SaveChanges();
+            }
+        }
+
+        public void RemoveTask(int id)
+        {
+            var task = _context.TaskToDos.Find(id);
+            if (task != null)
+            {
+                _context.TaskToDos.Remove(task);
+                _context.SaveChanges();
             }
         }
 
         public List<TaskToDo> GetAllTasks()
         {
-            return tasks.ToList();
-        }
-
-        public void RemoveTask(int id)
-        {
-            var task = tasks.Find(t => t.Id == id);
-            if (task != null)
-            {
-                tasks.Remove(task);
-            }
+            return _context.TaskToDos.ToList();
         }
     }
 }

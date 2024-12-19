@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using TaskClass;
+using TaskClass.Models;
 
 namespace ToDoListApp
 {
@@ -12,8 +13,8 @@ namespace ToDoListApp
         {
             InitializeComponent();
             comboBoxCategory.Items.AddRange(new string[] { "Personal", "Work", "School", "Other" });
-            comboBoxCategory.SelectedIndex = 0; // Default kategori
-            dateTimePickerDueDate.ShowCheckBox = true;
+            comboBoxCategory.SelectedIndex = 0; // Default category
+            dateTimePickerDueDate.ShowCheckBox = true; // Allow null value for DueDate
         }
 
         // Method to validate input fields
@@ -68,3 +69,4 @@ namespace ToDoListApp
         }
     }
 }
+
