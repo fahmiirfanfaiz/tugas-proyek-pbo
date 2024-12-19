@@ -12,6 +12,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToDoListApp", "ToDoListApp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Package", "Package\Package.csproj", "{786B0DBA-F769-4B31-9B1D-59E256F9CA3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskClassTest", "TaskManagerTest\TaskClassTest.csproj", "{7AEA0C84-C940-4444-9F75-12C9337A503D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{61CB85E2-7FFF-482A-A5F6-A846F49A9501} = {61CB85E2-7FFF-482A-A5F6-A846F49A9501}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,6 +35,10 @@ Global
 		{786B0DBA-F769-4B31-9B1D-59E256F9CA3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{786B0DBA-F769-4B31-9B1D-59E256F9CA3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{786B0DBA-F769-4B31-9B1D-59E256F9CA3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7AEA0C84-C940-4444-9F75-12C9337A503D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AEA0C84-C940-4444-9F75-12C9337A503D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AEA0C84-C940-4444-9F75-12C9337A503D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AEA0C84-C940-4444-9F75-12C9337A503D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
