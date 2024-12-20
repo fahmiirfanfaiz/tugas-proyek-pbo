@@ -1,5 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskClass;
@@ -19,7 +22,13 @@ namespace ToDoListApp
             var optionsBuilder = new DbContextOptionsBuilder<ToDoListDbContext>();
             optionsBuilder.UseSqlServer("Data Source=LAPTOP-2D8G3I8L\\SQLEXPRESS;Initial Catalog=ToDoListDB;Integrated Security=True;Pooling=False;Encrypt=False;Trust Server Certificate=True");
             var context = new ToDoListDbContext(optionsBuilder.Options);
-            taskManager = new TaskManager(context);
+
+            var httpClient = new HttpClient
+            {
+                BaseAddress = new Uri("http://localhost:5000/api/")
+            };
+
+            taskManager = new TaskManager(httpClient, context);
             taskSorter = new TaskSorter();
             RefreshTaskList();
         }
@@ -108,29 +117,26 @@ namespace ToDoListApp
         {
             if (lstTasks.SelectedItem != null)
             {
-                // Retrieve the selected task
                 TaskToDo selectedTask = (TaskToDo)lstTasks.SelectedItem;
 
-                // Open FormInputTask with the selected task data
                 var inputForm = new FormInputTask
                 {
                     Task = new TaskToDo(
                         selectedTask.Id,
                         selectedTask.NameTask,
                         selectedTask.Description,
-                        selectedTask.DueDate ?? DateTime.Today, // Convert nullable to non-nullable
+                        selectedTask.DueDate ?? DateTime.Today,
                         selectedTask.Category
                     )
                 };
 
                 if (inputForm.ShowDialog() == DialogResult.OK)
                 {
-                    // Update the task with the new data
                     await taskManager.EditTask(
                         selectedTask.Id,
                         inputForm.Task.NameTask,
                         inputForm.Task.Description ?? null,
-                        inputForm.Task.DueDate ?? DateTime.Today, // Convert nullable to non-nullable
+                        inputForm.Task.DueDate ?? DateTime.Today,
                         inputForm.Task.Category
                     );
 
@@ -154,5 +160,4 @@ namespace ToDoListApp
         }
     }
 }
-
 

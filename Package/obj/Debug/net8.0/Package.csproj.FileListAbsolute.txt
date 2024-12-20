@@ -1,33 +1,18 @@
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\bin\Debug\net8.0\Package.deps.json
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\bin\Debug\net8.0\Package.runtimeconfig.json
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\bin\Debug\net8.0\Package.dll
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\bin\Debug\net8.0\Package.pdb
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\Package.csproj.AssemblyReference.cache
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\Package.GeneratedMSBuildEditorConfig.editorconfig
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\Package.AssemblyInfoInputs.cache
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\Package.AssemblyInfo.cs
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\Package.csproj.CoreCompileInputs.cache
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\Package.sourcelink.json
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\Package.dll
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\refint\Package.dll
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\Package.pdb
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\Package.genruntimeconfig.cache
-D:\Catatan Kuliah\Semester 3\Pemrograman Berorientasi Obyek\Proyek Akhir\To Do List\Package\obj\Debug\net8.0\ref\Package.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\bin\Debug\net8.0\Package.deps.json
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\bin\Debug\net8.0\Package.runtimeconfig.json
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\bin\Debug\net8.0\Package.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\bin\Debug\net8.0\Package.pdb
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\bin\Debug\net8.0\TaskClass.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\bin\Debug\net8.0\TaskClass.pdb
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.csproj.AssemblyReference.cache
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.AssemblyInfoInputs.cache
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.AssemblyInfo.cs
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.csproj.CoreCompileInputs.cache
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.sourcelink.json
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.csproj.Up2Date
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\refint\Package.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.pdb
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.genruntimeconfig.cache
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\ref\Package.dll
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\bin\Debug\net8.0\TaskClass.dll
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\bin\Debug\net8.0\TaskClass.pdb
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\Package\obj\Debug\net8.0\Package.csproj.Up2Date

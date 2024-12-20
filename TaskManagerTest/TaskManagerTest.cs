@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Json;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,6 +11,7 @@ using TaskClass.Models;
 using TaskClass;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
+using Moq.Protected;
 
 namespace TaskClassTest
 {
@@ -18,6 +21,8 @@ namespace TaskClassTest
         private TaskManager _taskManager;
         private Mock<ToDoListDbContext> _mockContext;
         private Mock<DbSet<TaskToDo>> _mockDbSet;
+        private Mock<HttpMessageHandler> _mockHttpMessageHandler;
+        private HttpClient _mockHttpClient;
 
         [TestInitialize]
         public void Initialize()
@@ -27,11 +32,17 @@ namespace TaskClassTest
 
             _mockContext.Setup(m => m.TaskToDos).Returns(_mockDbSet.Object);
 
-            _taskManager = new TaskManager(_mockContext.Object);
+            _mockHttpMessageHandler = new Mock<HttpMessageHandler>();
+            _mockHttpClient = new HttpClient(_mockHttpMessageHandler.Object)
+            {
+                BaseAddress = new Uri("http://localhost:5000/api/")
+            };
+
+            _taskManager = new TaskManager(_mockHttpClient, _mockContext.Object);
         }
 
         [TestMethod]
-        public async Task AddTask_ShouldAddTaskToDatabase()
+        public async Task AddTask_ShouldAddTaskToDatabaseAndApi()
         {
             // Arrange
             var task = new TaskToDo
@@ -43,12 +54,26 @@ namespace TaskClassTest
                 IsComplete = false
             };
 
+            _mockHttpMessageHandler.Protected()
+                .Setup<Task<HttpResponseMessage>>(
+                    "SendAsync",
+                    ItExpr.IsAny<HttpRequestMessage>(),
+                    ItExpr.IsAny<CancellationToken>()
+                )
+                .ReturnsAsync(new HttpResponseMessage(System.Net.HttpStatusCode.OK));
+
             // Act
             await _taskManager.AddTask(task.NameTask, task.Description, task.DueDate, task.Category);
 
             // Assert
             _mockDbSet.Verify(m => m.AddAsync(It.IsAny<TaskToDo>(), default), Times.Once);
             _mockContext.Verify(m => m.SaveChangesAsync(default), Times.Once);
+            _mockHttpMessageHandler.Protected().Verify(
+                "SendAsync",
+                Times.Once(),
+                ItExpr.IsAny<HttpRequestMessage>(),
+                ItExpr.IsAny<CancellationToken>()
+            );
         }
 
         [TestMethod]
@@ -58,20 +83,42 @@ namespace TaskClassTest
             var task = new TaskToDo { Id = 1, IsComplete = false };
             _mockDbSet.Setup(m => m.FindAsync(It.IsAny<int>())).ReturnsAsync(task);
 
+            _mockHttpMessageHandler.Protected()
+                .Setup<Task<HttpResponseMessage>>(
+                    "SendAsync",
+                    ItExpr.IsAny<HttpRequestMessage>(),
+                    ItExpr.IsAny<CancellationToken>()
+                )
+                .ReturnsAsync(new HttpResponseMessage(System.Net.HttpStatusCode.OK));
+
             // Act
             await _taskManager.MarkTaskAsComplete(task.Id);
 
             // Assert
             Assert.IsTrue(task.IsComplete);
             _mockContext.Verify(m => m.SaveChangesAsync(default), Times.Once);
+            _mockHttpMessageHandler.Protected().Verify(
+                "SendAsync",
+                Times.Once(),
+                ItExpr.IsAny<HttpRequestMessage>(),
+                ItExpr.IsAny<CancellationToken>()
+            );
         }
 
         [TestMethod]
-        public async Task RemoveTask_ShouldRemoveTaskFromDatabase()
+        public async Task RemoveTask_ShouldRemoveTaskFromDatabaseAndApi()
         {
             // Arrange
             var task = new TaskToDo { Id = 1 };
             _mockDbSet.Setup(m => m.FindAsync(It.IsAny<int>())).ReturnsAsync(task);
+
+            _mockHttpMessageHandler.Protected()
+                .Setup<Task<HttpResponseMessage>>(
+                    "SendAsync",
+                    ItExpr.IsAny<HttpRequestMessage>(),
+                    ItExpr.IsAny<CancellationToken>()
+                )
+                .ReturnsAsync(new HttpResponseMessage(System.Net.HttpStatusCode.OK));
 
             // Act
             await _taskManager.RemoveTask(task.Id);
@@ -79,6 +126,12 @@ namespace TaskClassTest
             // Assert
             _mockDbSet.Verify(m => m.Remove(It.IsAny<TaskToDo>()), Times.Once);
             _mockContext.Verify(m => m.SaveChangesAsync(default), Times.Once);
+            _mockHttpMessageHandler.Protected().Verify(
+                "SendAsync",
+                Times.Once(),
+                ItExpr.IsAny<HttpRequestMessage>(),
+                ItExpr.IsAny<CancellationToken>()
+            );
         }
 
         [TestMethod]
@@ -190,5 +243,20 @@ namespace TaskClassTest
         }
 
         IQueryProvider IQueryable.Provider => new TestAsyncQueryProvider<T>(this);
+    }
+
+    public class MockHttpMessageHandler : HttpMessageHandler
+    {
+        private readonly Func<HttpRequestMessage, Task<HttpResponseMessage>> _sendAsync;
+
+        public MockHttpMessageHandler(Func<HttpRequestMessage, Task<HttpResponseMessage>> sendAsync)
+        {
+            _sendAsync = sendAsync;
+        }
+
+        protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            return _sendAsync(request);
+        }
     }
 }
