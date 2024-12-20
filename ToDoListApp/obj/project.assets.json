@@ -1814,7 +1814,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
-          "System.Data.SQLite": "1.0.119"
+          "System.Data.SQLite": "1.0.119",
+          "TaskClass": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Package.dll": {}
@@ -5396,23 +5397,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ACER\\.nuget\\packages\\": {},
+    "C:\\Users\\fadel\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To Do List\\ToDoListApp\\ToDoListApp.csproj",
+      "projectUniqueName": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj",
       "projectName": "ToDoListApp",
-      "projectPath": "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To Do List\\ToDoListApp\\ToDoListApp.csproj",
-      "packagesPath": "C:\\Users\\ACER\\.nuget\\packages\\",
-      "outputPath": "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To Do List\\ToDoListApp\\obj\\",
+      "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj",
+      "packagesPath": "C:\\Users\\fadel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\ACER\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fadel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5421,18 +5422,17 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To Do List\\Package\\Package.csproj": {
-              "projectPath": "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To Do List\\Package\\Package.csproj"
+            "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\Package\\Package.csproj": {
+              "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\Package\\Package.csproj"
             },
-            "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To Do List\\TaskClass\\TaskClass.csproj": {
-              "projectPath": "D:\\Catatan Kuliah\\Semester 3\\Pemrograman Berorientasi Obyek\\Proyek Akhir\\To Do List\\TaskClass\\TaskClass.csproj"
+            "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj": {
+              "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj"
             }
           }
         }
@@ -5446,7 +5446,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -5490,7 +5491,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

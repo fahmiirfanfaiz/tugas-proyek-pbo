@@ -1,4 +1,19 @@
 .vs/
 
-bin/
-obj/
+# Ignore bin and obj folders
+**/bin/
+**/obj/
+
+**/publish/
+
+*.bak
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+desktop.ini
+

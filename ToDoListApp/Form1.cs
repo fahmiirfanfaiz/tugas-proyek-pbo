@@ -1,16 +1,17 @@
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaskClass;
 using TaskClass.Models;
-using TaskSorter;
+using TaskSorterClass;
 
 namespace ToDoListApp
 {
     public partial class Form1 : Form
     {
         private TaskManager taskManager;
-        private TaskSorterService taskSorterService;
+        private TaskSorter taskSorter;
 
         public Form1()
         {
@@ -19,32 +20,32 @@ namespace ToDoListApp
             optionsBuilder.UseSqlServer("Data Source=LAPTOP-2D8G3I8L\\SQLEXPRESS;Initial Catalog=ToDoListDB;Integrated Security=True;Pooling=False;Encrypt=False;Trust Server Certificate=True");
             var context = new ToDoListDbContext(optionsBuilder.Options);
             taskManager = new TaskManager(context);
-            taskSorterService = new TaskSorterService();
+            taskSorter = new TaskSorter();
             RefreshTaskList();
         }
 
-        private void btnAddTask_Click(object sender, EventArgs e)
+        private async void btnAddTask_Click(object sender, EventArgs e)
         {
             var inputForm = new FormInputTask();
             if (inputForm.ShowDialog() == DialogResult.OK)
             {
-                taskManager.AddTask(
+                await taskManager.AddTask(
                     inputForm.Task.NameTask,
-                    inputForm.Task.Description ?? string.Empty,
+                    inputForm.Task.Description ?? null,
                     inputForm.Task.DueDate ?? DateTime.Today,
                     inputForm.Task.Category
                 );
-                RefreshTaskList();
+                await RefreshTaskList();
             }
         }
 
-        private void btnMarkComplete_Click(object sender, EventArgs e)
+        private async void btnMarkComplete_Click(object sender, EventArgs e)
         {
             if (lstTasks.SelectedItem != null)
             {
                 TaskToDo selectedTask = (TaskToDo)lstTasks.SelectedItem;
-                taskManager.MarkTaskAsComplete(selectedTask.Id);
-                RefreshTaskList();
+                await taskManager.MarkTaskAsComplete(selectedTask.Id);
+                await RefreshTaskList();
             }
             else
             {
@@ -52,13 +53,13 @@ namespace ToDoListApp
             }
         }
 
-        private void btnRemoveTask_Click(object sender, EventArgs e)
+        private async void btnRemoveTask_Click(object sender, EventArgs e)
         {
             if (lstTasks.SelectedItem != null)
             {
                 TaskToDo selectedTask = (TaskToDo)lstTasks.SelectedItem;
-                taskManager.RemoveTask(selectedTask.Id);
-                RefreshTaskList();
+                await taskManager.RemoveTask(selectedTask.Id);
+                await RefreshTaskList();
             }
             else
             {
@@ -66,20 +67,33 @@ namespace ToDoListApp
             }
         }
 
-        private void RefreshTaskList()
+        private async void btnSortByName_Click(object sender, EventArgs e)
         {
             lstTasks.Items.Clear();
-            var tasks = taskManager.GetAllTasks();
-            var taskToDo2List = tasks.Select(t => new TaskToDo_2
-            {
-                NameTask = t.NameTask,
-                Description = t.Description,
-                DueDate = t.DueDate,
-                Category = t.Category,
-                IsComplete = t.IsComplete
-            }).ToList();
-            var sortedTasks = taskSorterService.GetSortedTasks(taskToDo2List);
+            var tasks = await taskManager.GetAllTasks();
+            var sortedTasks = taskSorter.SortTasksByName(tasks);
             foreach (var task in sortedTasks)
+            {
+                lstTasks.Items.Add(task);
+            }
+        }
+
+        private async void btnSortByDueDate_Click(object sender, EventArgs e)
+        {
+            lstTasks.Items.Clear();
+            var tasks = await taskManager.GetAllTasks();
+            var sortedTasks = taskSorter.SortTasksByDueDate(tasks);
+            foreach (var task in sortedTasks)
+            {
+                lstTasks.Items.Add(task);
+            }
+        }
+
+        private async Task RefreshTaskList()
+        {
+            lstTasks.Items.Clear();
+            var tasks = await taskManager.GetAllTasks();
+            foreach (var task in tasks)
             {
                 lstTasks.Items.Add(task);
             }
@@ -90,7 +104,7 @@ namespace ToDoListApp
 
         }
 
-        private void Edit_Click(object sender, EventArgs e)
+        private async void Edit_Click(object sender, EventArgs e)
         {
             if (lstTasks.SelectedItem != null)
             {
@@ -112,15 +126,15 @@ namespace ToDoListApp
                 if (inputForm.ShowDialog() == DialogResult.OK)
                 {
                     // Update the task with the new data
-                    taskManager.EditTask(
+                    await taskManager.EditTask(
                         selectedTask.Id,
                         inputForm.Task.NameTask,
-                        inputForm.Task.Description ?? string.Empty,
+                        inputForm.Task.Description ?? null,
                         inputForm.Task.DueDate ?? DateTime.Today, // Convert nullable to non-nullable
                         inputForm.Task.Category
                     );
 
-                    RefreshTaskList();
+                    await RefreshTaskList();
                 }
             }
             else
@@ -133,5 +147,12 @@ namespace ToDoListApp
         {
 
         }
+
+        private void monthCalendar_DateSelected(object sender, DateRangeEventArgs e)
+        {
+            // Handle date selection if needed
+        }
     }
 }
+
+

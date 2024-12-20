@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using TaskClass.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace TaskClass
 {
@@ -14,7 +15,10 @@ namespace TaskClass
             _context = context;
         }
 
-        public void AddTask(string nameTask, string description, DateTime? dueDate, string category)
+        /// <summary>
+        /// Adds a new task to the database.
+        /// </summary>
+        public async Task AddTask(string nameTask, string description, DateTime? dueDate, string category)
         {
             var task = new TaskToDo
             {
@@ -24,50 +28,66 @@ namespace TaskClass
                 Category = category,
                 IsComplete = false
             };
-            _context.TaskToDos.Add(task);
-            _context.SaveChanges();
+            await _context.TaskToDos.AddAsync(task);
+            await _context.SaveChangesAsync();
         }
 
-        public void EditTask(int id, string newNameTask, string newDescription, DateTime newDueDate, string newCategory)
+        /// <summary>
+        /// Edits an existing task in the database.
+        /// </summary>
+        public async Task EditTask(int id, string newNameTask, string newDescription, DateTime newDueDate, string newCategory)
         {
-            var task = _context.TaskToDos.Find(id); // Use _context.TaskToDos to find the task by ID
+            var task = await FindTaskById(id);
             if (task != null)
             {
                 task.NameTask = newNameTask;
                 task.Description = newDescription;
                 task.DueDate = newDueDate;
                 task.Category = newCategory;
-                _context.SaveChanges(); // Save changes to the database
+                await _context.SaveChangesAsync();
             }
         }
 
-        public void MarkTaskAsComplete(int id)
+        /// <summary>
+        /// Marks a task as complete.
+        /// </summary>
+        public async Task MarkTaskAsComplete(int id)
         {
-            var task = _context.TaskToDos.Find(id);
+            var task = await FindTaskById(id);
             if (task != null)
             {
                 task.IsComplete = true;
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
 
-        public void RemoveTask(int id)
+        /// <summary>
+        /// Removes a task from the database.
+        /// </summary>
+        public async Task RemoveTask(int id)
         {
-            var task = _context.TaskToDos.Find(id);
+            var task = await FindTaskById(id);
             if (task != null)
             {
                 _context.TaskToDos.Remove(task);
-                _context.SaveChanges();
+                await _context.SaveChangesAsync();
             }
         }
 
-        public List<TaskToDo> GetAllTasks()
+        /// <summary>
+        /// Gets all tasks from the database.
+        /// </summary>
+        public async Task<List<TaskToDo>> GetAllTasks()
         {
-<<<<<<< HEAD
-            return _context.TaskToDos.ToList(); 
-=======
-            return [.. _context.TaskToDos];
->>>>>>> 03e2d51abdeb477a3a23397c4e6eb9463da09bc5
+            return await _context.TaskToDos.ToListAsync();
+        }
+
+        /// <summary>
+        /// Finds a task by its ID.
+        /// </summary>
+        private async Task<TaskToDo> FindTaskById(int id)
+        {
+            return await _context.TaskToDos.FindAsync(id);
         }
     }
 }

@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using TaskClass.Models;
 using TaskClass;
+using Microsoft.EntityFrameworkCore.Query;
+using System.Linq.Expressions;
 
 namespace TaskClassTest
 {
@@ -28,7 +31,7 @@ namespace TaskClassTest
         }
 
         [TestMethod]
-        public void AddTask_ShouldAddTaskToDatabase()
+        public async Task AddTask_ShouldAddTaskToDatabase()
         {
             // Arrange
             var task = new TaskToDo
@@ -41,45 +44,45 @@ namespace TaskClassTest
             };
 
             // Act
-            _taskManager.AddTask(task.NameTask, task.Description, task.DueDate, task.Category);
+            await _taskManager.AddTask(task.NameTask, task.Description, task.DueDate, task.Category);
 
             // Assert
-            _mockDbSet.Verify(m => m.Add(It.IsAny<TaskToDo>()), Times.Once);
-            _mockContext.Verify(m => m.SaveChanges(), Times.Once);
+            _mockDbSet.Verify(m => m.AddAsync(It.IsAny<TaskToDo>(), default), Times.Once);
+            _mockContext.Verify(m => m.SaveChangesAsync(default), Times.Once);
         }
 
         [TestMethod]
-        public void MarkTaskAsComplete_ShouldSetIsCompleteToTrue()
+        public async Task MarkTaskAsComplete_ShouldSetIsCompleteToTrue()
         {
             // Arrange
             var task = new TaskToDo { Id = 1, IsComplete = false };
-            _mockDbSet.Setup(m => m.Find(It.IsAny<int>())).Returns(task);
+            _mockDbSet.Setup(m => m.FindAsync(It.IsAny<int>())).ReturnsAsync(task);
 
             // Act
-            _taskManager.MarkTaskAsComplete(task.Id);
+            await _taskManager.MarkTaskAsComplete(task.Id);
 
             // Assert
             Assert.IsTrue(task.IsComplete);
-            _mockContext.Verify(m => m.SaveChanges(), Times.Once);
+            _mockContext.Verify(m => m.SaveChangesAsync(default), Times.Once);
         }
 
         [TestMethod]
-        public void RemoveTask_ShouldRemoveTaskFromDatabase()
+        public async Task RemoveTask_ShouldRemoveTaskFromDatabase()
         {
             // Arrange
             var task = new TaskToDo { Id = 1 };
-            _mockDbSet.Setup(m => m.Find(It.IsAny<int>())).Returns(task);
+            _mockDbSet.Setup(m => m.FindAsync(It.IsAny<int>())).ReturnsAsync(task);
 
             // Act
-            _taskManager.RemoveTask(task.Id);
+            await _taskManager.RemoveTask(task.Id);
 
             // Assert
             _mockDbSet.Verify(m => m.Remove(It.IsAny<TaskToDo>()), Times.Once);
-            _mockContext.Verify(m => m.SaveChanges(), Times.Once);
+            _mockContext.Verify(m => m.SaveChangesAsync(default), Times.Once);
         }
 
         [TestMethod]
-        public void GetAllTasks_ShouldReturnAllTasks()
+        public async Task GetAllTasks_ShouldReturnAllTasks()
         {
             // Arrange
             var tasks = new List<TaskToDo>
@@ -93,16 +96,99 @@ namespace TaskClassTest
             mockDbSet.As<IQueryable<TaskToDo>>().Setup(m => m.Expression).Returns(tasks.Expression);
             mockDbSet.As<IQueryable<TaskToDo>>().Setup(m => m.ElementType).Returns(tasks.ElementType);
             mockDbSet.As<IQueryable<TaskToDo>>().Setup(m => m.GetEnumerator()).Returns(tasks.GetEnumerator());
+            mockDbSet.As<IAsyncEnumerable<TaskToDo>>().Setup(m => m.GetAsyncEnumerator(default)).Returns(new TestAsyncEnumerator<TaskToDo>(tasks.GetEnumerator()));
+            mockDbSet.As<IQueryable<TaskToDo>>().Setup(m => m.Provider).Returns(new TestAsyncQueryProvider<TaskToDo>(tasks.Provider));
 
             _mockContext.Setup(m => m.TaskToDos).Returns(mockDbSet.Object);
 
             // Act
-            var result = _taskManager.GetAllTasks();
+            var result = await _taskManager.GetAllTasks();
 
             // Assert
             Assert.AreEqual(2, result.Count);
             Assert.AreEqual("Task 1", result[0].NameTask);
             Assert.AreEqual("Task 2", result[1].NameTask);
         }
+    }
+
+    internal class TestAsyncEnumerator<T> : IAsyncEnumerator<T>
+    {
+        private readonly IEnumerator<T> _inner;
+
+        public TestAsyncEnumerator(IEnumerator<T> inner)
+        {
+            _inner = inner;
+        }
+
+        public ValueTask DisposeAsync()
+        {
+            _inner.Dispose();
+            return ValueTask.CompletedTask;
+        }
+
+        public ValueTask<bool> MoveNextAsync()
+        {
+            return new ValueTask<bool>(_inner.MoveNext());
+        }
+
+        public T Current => _inner.Current;
+    }
+
+    internal class TestAsyncQueryProvider<TEntity> : IAsyncQueryProvider
+    {
+        private readonly IQueryProvider _inner;
+
+        internal TestAsyncQueryProvider(IQueryProvider inner)
+        {
+            _inner = inner;
+        }
+
+        public IQueryable CreateQuery(Expression expression)
+        {
+            return new TestAsyncEnumerable<TEntity>(expression);
+        }
+
+        public IQueryable<TElement> CreateQuery<TElement>(Expression expression)
+        {
+            return new TestAsyncEnumerable<TElement>(expression);
+        }
+
+        public object Execute(Expression expression)
+        {
+            return _inner.Execute(expression);
+        }
+
+        public TResult Execute<TResult>(Expression expression)
+        {
+            return _inner.Execute<TResult>(expression);
+        }
+
+        public IAsyncEnumerable<TResult> ExecuteAsync<TResult>(Expression expression)
+        {
+            return new TestAsyncEnumerable<TResult>(expression);
+        }
+
+        public TResult ExecuteAsync<TResult>(Expression expression, CancellationToken cancellationToken)
+        {
+            return Execute<TResult>(expression);
+        }
+    }
+
+    internal class TestAsyncEnumerable<T> : EnumerableQuery<T>, IAsyncEnumerable<T>, IQueryable<T>
+    {
+        public TestAsyncEnumerable(IEnumerable<T> enumerable)
+            : base(enumerable)
+        { }
+
+        public TestAsyncEnumerable(Expression expression)
+            : base(expression)
+        { }
+
+        public IAsyncEnumerator<T> GetAsyncEnumerator(CancellationToken cancellationToken = default)
+        {
+            return new TestAsyncEnumerator<T>(this.AsEnumerable().GetEnumerator());
+        }
+
+        IQueryProvider IQueryable.Provider => new TestAsyncQueryProvider<T>(this);
     }
 }
