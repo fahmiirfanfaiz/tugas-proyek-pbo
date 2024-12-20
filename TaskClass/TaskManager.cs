@@ -63,7 +63,11 @@ namespace TaskClass
 
         public List<TaskToDo> GetAllTasks()
         {
+<<<<<<< HEAD
             return _context.TaskToDos.ToList(); 
+=======
+            return [.. _context.TaskToDos];
+>>>>>>> 03e2d51abdeb477a3a23397c4e6eb9463da09bc5
         }
     }
 }
