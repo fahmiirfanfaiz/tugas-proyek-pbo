@@ -8,6 +8,7 @@
         private System.Windows.Forms.Button btnRemoveTask;
         private System.Windows.Forms.Button btnSortByName;
         private System.Windows.Forms.Button btnSortByDueDate;
+        private System.Windows.Forms.Button btnEditTask; // Add this line
         private System.Windows.Forms.ListBox lstTasks;
         private System.Windows.Forms.MonthCalendar monthCalendar;
 
@@ -27,6 +28,7 @@
             btnRemoveTask = new Button();
             btnSortByName = new Button();
             btnSortByDueDate = new Button();
+            btnEditTask = new Button(); // Add this line
             lstTasks = new ListBox();
             monthCalendar = new MonthCalendar();
             SuspendLayout();
@@ -86,6 +88,17 @@
             btnSortByDueDate.UseVisualStyleBackColor = true;
             btnSortByDueDate.Click += btnSortByDueDate_Click;
             // 
+            // btnEditTask
+            // 
+            btnEditTask.Location = new Point(689, 18); // Set the location
+            btnEditTask.Margin = new Padding(4, 5, 4, 5);
+            btnEditTask.Name = "btnEditTask";
+            btnEditTask.Size = new Size(133, 35);
+            btnEditTask.TabIndex = 5;
+            btnEditTask.Text = "Edit Task";
+            btnEditTask.UseVisualStyleBackColor = true;
+            btnEditTask.Click += btnEditTask_Click;
+            // 
             // lstTasks
             // 
             lstTasks.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
@@ -94,7 +107,7 @@
             lstTasks.Margin = new Padding(4, 5, 4, 5);
             lstTasks.Name = "lstTasks";
             lstTasks.Size = new Size(664, 444);
-            lstTasks.TabIndex = 5;
+            lstTasks.TabIndex = 6;
             lstTasks.SelectedIndexChanged += lstTasks_SelectedIndexChanged;
             // 
             // monthCalendar
@@ -103,7 +116,7 @@
             monthCalendar.Location = new Point(688, 63);
             monthCalendar.Margin = new Padding(12, 14, 12, 14);
             monthCalendar.Name = "monthCalendar";
-            monthCalendar.TabIndex = 6;
+            monthCalendar.TabIndex = 7;
             monthCalendar.DateChanged += monthCalendar_DateChanged;
             monthCalendar.DateSelected += monthCalendar_DateSelected;
             // 
@@ -114,6 +127,7 @@
             ClientSize = new Size(912, 528);
             Controls.Add(monthCalendar);
             Controls.Add(lstTasks);
+            Controls.Add(btnEditTask); // Add this line
             Controls.Add(btnSortByDueDate);
             Controls.Add(btnSortByName);
             Controls.Add(btnRemoveTask);

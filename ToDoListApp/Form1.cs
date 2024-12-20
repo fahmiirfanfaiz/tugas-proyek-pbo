@@ -140,7 +140,7 @@ namespace ToDoListApp
 
         }
 
-        private async void Edit_Click(object sender, EventArgs e)
+        private async void btnEditTask_Click(object sender, EventArgs e)
         {
             if (lstTasks.SelectedItem != null)
             {
