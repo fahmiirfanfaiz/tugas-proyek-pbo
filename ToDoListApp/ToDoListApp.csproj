@@ -17,11 +17,11 @@
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.0" />
+    <PackageReference Include="OOP_Project_Package" Version="1.0.0" />
     <PackageReference Include="System.Composition.Hosting" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Package\Package.csproj" />
     <ProjectReference Include="..\TaskClass\TaskClass.csproj" />
   </ItemGroup>
 

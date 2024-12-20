@@ -1183,6 +1183,23 @@
           "buildTransitive/Mono.TextTemplating.targets": {}
         }
       },
+      "OOP_Project_Package/1.0.0": {
+        "type": "package",
+        "dependencies": {
+          "System.Data.SQLite": "1.0.119",
+          "TaskClass": "1.0.0"
+        },
+        "compile": {
+          "lib/net8.0/Package.dll": {
+            "related": ".runtimeconfig.json"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Package.dll": {
+            "related": ".runtimeconfig.json"
+          }
+        }
+      },
       "runtime.native.System.Data.SqlClient.sni/4.7.0": {
         "type": "package",
         "dependencies": {
@@ -1936,20 +1953,6 @@
             "assetType": "runtime",
             "rid": "win"
           }
-        }
-      },
-      "Package/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "System.Data.SQLite": "1.0.119",
-          "TaskClass": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Package.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Package.dll": {}
         }
       },
       "TaskClass/1.0.0": {
@@ -4163,6 +4166,19 @@
         "readme.md"
       ]
     },
+    "OOP_Project_Package/1.0.0": {
+      "sha512": "FN2c/bkliDq+7Ja7WeofpfJ5pWzUewp2MU8tOTFWo9geJhlQywKCBEo65YKpbLGpNOAb8v6eWooXEt3laOs2dQ==",
+      "type": "package",
+      "path": "oop_project_package/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net8.0/Package.dll",
+        "lib/net8.0/Package.runtimeconfig.json",
+        "oop_project_package.1.0.0.nupkg.sha512",
+        "oop_project_package.nuspec"
+      ]
+    },
     "runtime.native.System.Data.SqlClient.sni/4.7.0": {
       "sha512": "9kyFSIdN3T0qjDQ2R0HRXYIhS3l5psBzQi6qqhdLz+SzFyEy4sVxNOke+yyYv8Cu8rPER12c3RDjLT8wF3WBYQ==",
       "type": "package",
@@ -5683,11 +5699,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Package/1.0.0": {
-      "type": "project",
-      "path": "../Package/Package.csproj",
-      "msbuildProject": "../Package/Package.csproj"
-    },
     "TaskClass/1.0.0": {
       "type": "project",
       "path": "../TaskClass/TaskClass.csproj",
@@ -5701,29 +5712,29 @@
       "Microsoft.EntityFrameworkCore.Design >= 9.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.0",
       "Microsoft.Extensions.DependencyInjection >= 9.0.0",
-      "Package >= 1.0.0",
+      "OOP_Project_Package >= 1.0.0",
       "System.Composition.Hosting >= 9.0.0",
       "TaskClass >= 1.0.0"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {},
+    "C:\\Users\\fadel\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo19\\ToDoListApp\\ToDoListApp.csproj",
+      "projectUniqueName": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj",
       "projectName": "ToDoListApp",
-      "projectPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo19\\ToDoListApp\\ToDoListApp.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo19\\ToDoListApp\\obj\\",
+      "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\ToDoListApp.csproj",
+      "packagesPath": "C:\\Users\\fadel\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\ToDoListApp\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\fadel\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5732,18 +5743,14 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo19\\Package\\Package.csproj": {
-              "projectPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo19\\Package\\Package.csproj"
-            },
-            "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo19\\TaskClass\\TaskClass.csproj": {
-              "projectPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo19\\TaskClass\\TaskClass.csproj"
+            "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj": {
+              "projectPath": "C:\\Users\\fadel\\Fadel\\Code\\tugas-proyek-pbo\\TaskClass\\TaskClass.csproj"
             }
           }
         }
@@ -5785,6 +5792,10 @@
           "Microsoft.Extensions.DependencyInjection": {
             "target": "Package",
             "version": "[9.0.0, )"
+          },
+          "OOP_Project_Package": {
+            "target": "Package",
+            "version": "[1.0.0, )"
           },
           "System.Composition.Hosting": {
             "target": "Package",

@@ -39,7 +39,8 @@ namespace TaskClass.Models
 
         public override string ToString()
         {
-            return $"{NameTask} - {Description} - Due: {DueDate?.ToShortDateString() ?? "No due date"} - Category: {Category} - {IsComplete}";
+            string completionStatus = IsComplete ? "Complete" : "Not Complete";
+            return $"{NameTask} - {Description} - Due: {DueDate?.ToShortDateString() ?? "No due date"} - Category: {Category} - {completionStatus}";
         }
     }
 }

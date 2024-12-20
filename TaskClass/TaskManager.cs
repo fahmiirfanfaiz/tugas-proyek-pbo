@@ -33,15 +33,27 @@ namespace TaskClass
                 IsComplete = false
             };
 
-            // Add to database
-            await _context.TaskToDos.AddAsync(task);
-            await _context.SaveChangesAsync();
-
-            // Add to API
-            var response = await _httpClient.PostAsJsonAsync("api/Tasks", task);
-            if (!response.IsSuccessStatusCode)
+            try
             {
-                throw new Exception("Failed to add task to API.");
+                // Add to database
+                await _context.TaskToDos.AddAsync(task);
+                await _context.SaveChangesAsync();
+
+                // Add to API
+                var response = await _httpClient.PostAsJsonAsync("api/Tasks", task);
+                response.EnsureSuccessStatusCode();
+            }
+            catch (HttpRequestException ex)
+            {
+                // Handle HTTP request errors
+                Console.WriteLine($"Request error: {ex.Message}");
+                throw new Exception("Failed to add task to API.", ex);
+            }
+            catch (Exception ex)
+            {
+                // Handle other errors
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                throw;
             }
         }
 
@@ -57,13 +69,26 @@ namespace TaskClass
                 task.Description = newDescription;
                 task.DueDate = newDueDate;
                 task.Category = newCategory;
-                await _context.SaveChangesAsync();
 
-                // Update in API
-                var response = await _httpClient.PutAsJsonAsync($"api/Tasks/{id}", task);
-                if (!response.IsSuccessStatusCode)
+                try
                 {
-                    throw new Exception("Failed to edit task in API.");
+                    await _context.SaveChangesAsync();
+
+                    // Update in API
+                    var response = await _httpClient.PutAsJsonAsync($"api/Tasks/{id}", task);
+                    response.EnsureSuccessStatusCode();
+                }
+                catch (HttpRequestException ex)
+                {
+                    // Handle HTTP request errors
+                    Console.WriteLine($"Request error: {ex.Message}");
+                    throw new Exception("Failed to edit task in API.", ex);
+                }
+                catch (Exception ex)
+                {
+                    // Handle other errors
+                    Console.WriteLine($"An error occurred: {ex.Message}");
+                    throw;
                 }
             }
         }
@@ -77,13 +102,26 @@ namespace TaskClass
             if (task != null)
             {
                 task.IsComplete = true;
-                await _context.SaveChangesAsync();
 
-                // Update in API
-                var response = await _httpClient.PutAsync($"api/Tasks/Complete/{id}", null);
-                if (!response.IsSuccessStatusCode)
+                try
                 {
-                    throw new Exception("Failed to mark task as complete in API.");
+                    await _context.SaveChangesAsync();
+
+                    // Update in API
+                    var response = await _httpClient.PutAsync($"api/Tasks/Complete/{id}", null);
+                    response.EnsureSuccessStatusCode();
+                }
+                catch (HttpRequestException ex)
+                {
+                    // Handle HTTP request errors
+                    Console.WriteLine($"Request error: {ex.Message}");
+                    throw new Exception("Failed to mark task as complete in API.", ex);
+                }
+                catch (Exception ex)
+                {
+                    // Handle other errors
+                    Console.WriteLine($"An error occurred: {ex.Message}");
+                    throw;
                 }
             }
         }
@@ -97,13 +135,26 @@ namespace TaskClass
             if (task != null)
             {
                 _context.TaskToDos.Remove(task);
-                await _context.SaveChangesAsync();
 
-                // Remove from API
-                var response = await _httpClient.DeleteAsync($"api/Tasks/{id}");
-                if (!response.IsSuccessStatusCode)
+                try
                 {
-                    throw new Exception("Failed to remove task from API.");
+                    await _context.SaveChangesAsync();
+
+                    // Remove from API
+                    var response = await _httpClient.DeleteAsync($"api/Tasks/{id}");
+                    response.EnsureSuccessStatusCode();
+                }
+                catch (HttpRequestException ex)
+                {
+                    // Handle HTTP request errors
+                    Console.WriteLine($"Request error: {ex.Message}");
+                    throw new Exception("Failed to remove task from API.", ex);
+                }
+                catch (Exception ex)
+                {
+                    // Handle other errors
+                    Console.WriteLine($"An error occurred: {ex.Message}");
+                    throw;
                 }
             }
         }
