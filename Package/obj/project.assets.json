@@ -1221,11 +1221,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo17\\Package\\Package.csproj",
+      "projectUniqueName": "C:\\Users\\User\\source\\repos\\tugas-proyek-pbo17\\Package\\Package.csproj",
       "projectName": "Package",
-      "projectPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo17\\Package\\Package.csproj",
+      "projectPath": "C:\\Users\\User\\source\\repos\\tugas-proyek-pbo17\\Package\\Package.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo17\\Package\\obj\\",
+      "outputPath": "C:\\Users\\User\\source\\repos\\tugas-proyek-pbo17\\Package\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1289,5 +1289,13 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\User\\source\\repos\\tugas-proyek-pbo17\\Package\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

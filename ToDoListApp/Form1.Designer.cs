@@ -100,6 +100,7 @@
             Margin = new Padding(5, 6, 5, 6);
             Name = "Form1";
             Text = "To-Do List";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 

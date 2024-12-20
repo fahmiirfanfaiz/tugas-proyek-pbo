@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo17\\TaskClass\\TaskClass.csproj": {}
+    "C:\\Users\\User\\source\\repos\\tugas-proyek-pbo17\\TaskClass\\TaskClass.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo17\\TaskClass\\TaskClass.csproj": {
+    "C:\\Users\\User\\source\\repos\\tugas-proyek-pbo17\\TaskClass\\TaskClass.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo17\\TaskClass\\TaskClass.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\tugas-proyek-pbo17\\TaskClass\\TaskClass.csproj",
         "projectName": "TaskClass",
-        "projectPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo17\\TaskClass\\TaskClass.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\tugas-proyek-pbo17\\TaskClass\\TaskClass.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Source\\Repos\\tugas-proyek-pbo17\\TaskClass\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\tugas-proyek-pbo17\\TaskClass\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -62,6 +62,10 @@
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[9.0.0, )"
             },

@@ -63,6 +63,7 @@ namespace TaskClass
 
         public async Task RemoveTask(int id)
         {
+<<<<<<< HEAD
             var response = await _httpClient.DeleteAsync($"api/Tasks/{id}");
             if (!response.IsSuccessStatusCode)
             {
@@ -81,6 +82,13 @@ namespace TaskClass
             {
                 throw new Exception("Failed to retrieve tasks.");
             }
+=======
+<<<<<<< HEAD
+            return _context.TaskToDos.ToList(); 
+=======
+            return [.. _context.TaskToDos];
+>>>>>>> 03e2d51abdeb477a3a23397c4e6eb9463da09bc5
+>>>>>>> be94fbaf434698a0e0b720247a98dfc18b2d0ea6
         }
     }
 }
