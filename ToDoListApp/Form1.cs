@@ -158,6 +158,11 @@ namespace ToDoListApp
         {
             // Handle date selection if needed
         }
+
+        private void monthCalendar_DateChanged(object sender, DateRangeEventArgs e)
+        {
+
+        }
     }
 }
 

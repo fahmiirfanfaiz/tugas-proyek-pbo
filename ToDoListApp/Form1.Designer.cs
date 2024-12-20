@@ -22,100 +22,109 @@
 
         private void InitializeComponent()
         {
-            this.btnAddTask = new System.Windows.Forms.Button();
-            this.btnMarkComplete = new System.Windows.Forms.Button();
-            this.btnRemoveTask = new System.Windows.Forms.Button();
-            this.btnSortByName = new System.Windows.Forms.Button();
-            this.btnSortByDueDate = new System.Windows.Forms.Button();
-            this.lstTasks = new System.Windows.Forms.ListBox();
-            this.monthCalendar = new System.Windows.Forms.MonthCalendar();
-            this.SuspendLayout();
+            btnAddTask = new Button();
+            btnMarkComplete = new Button();
+            btnRemoveTask = new Button();
+            btnSortByName = new Button();
+            btnSortByDueDate = new Button();
+            lstTasks = new ListBox();
+            monthCalendar = new MonthCalendar();
+            SuspendLayout();
             // 
             // btnAddTask
             // 
-            this.btnAddTask.Location = new System.Drawing.Point(12, 12);
-            this.btnAddTask.Name = "btnAddTask";
-            this.btnAddTask.Size = new System.Drawing.Size(75, 23);
-            this.btnAddTask.TabIndex = 0;
-            this.btnAddTask.Text = "Add Task";
-            this.btnAddTask.UseVisualStyleBackColor = true;
-            this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
+            btnAddTask.Location = new Point(16, 18);
+            btnAddTask.Margin = new Padding(4, 5, 4, 5);
+            btnAddTask.Name = "btnAddTask";
+            btnAddTask.Size = new Size(100, 35);
+            btnAddTask.TabIndex = 0;
+            btnAddTask.Text = "Add Task";
+            btnAddTask.UseVisualStyleBackColor = true;
+            btnAddTask.Click += btnAddTask_Click;
             // 
             // btnMarkComplete
             // 
-            this.btnMarkComplete.Location = new System.Drawing.Point(93, 12);
-            this.btnMarkComplete.Name = "btnMarkComplete";
-            this.btnMarkComplete.Size = new System.Drawing.Size(100, 23);
-            this.btnMarkComplete.TabIndex = 1;
-            this.btnMarkComplete.Text = "Mark Complete";
-            this.btnMarkComplete.UseVisualStyleBackColor = true;
-            this.btnMarkComplete.Click += new System.EventHandler(this.btnMarkComplete_Click);
+            btnMarkComplete.Location = new Point(124, 18);
+            btnMarkComplete.Margin = new Padding(4, 5, 4, 5);
+            btnMarkComplete.Name = "btnMarkComplete";
+            btnMarkComplete.Size = new Size(133, 35);
+            btnMarkComplete.TabIndex = 1;
+            btnMarkComplete.Text = "Mark Complete";
+            btnMarkComplete.UseVisualStyleBackColor = true;
+            btnMarkComplete.Click += btnMarkComplete_Click;
             // 
             // btnRemoveTask
             // 
-            this.btnRemoveTask.Location = new System.Drawing.Point(199, 12);
-            this.btnRemoveTask.Name = "btnRemoveTask";
-            this.btnRemoveTask.Size = new System.Drawing.Size(100, 23);
-            this.btnRemoveTask.TabIndex = 2;
-            this.btnRemoveTask.Text = "Remove Task";
-            this.btnRemoveTask.UseVisualStyleBackColor = true;
-            this.btnRemoveTask.Click += new System.EventHandler(this.btnRemoveTask_Click);
+            btnRemoveTask.Location = new Point(265, 18);
+            btnRemoveTask.Margin = new Padding(4, 5, 4, 5);
+            btnRemoveTask.Name = "btnRemoveTask";
+            btnRemoveTask.Size = new Size(133, 35);
+            btnRemoveTask.TabIndex = 2;
+            btnRemoveTask.Text = "Remove Task";
+            btnRemoveTask.UseVisualStyleBackColor = true;
+            btnRemoveTask.Click += btnRemoveTask_Click;
             // 
             // btnSortByName
             // 
-            this.btnSortByName.Location = new System.Drawing.Point(305, 12);
-            this.btnSortByName.Name = "btnSortByName";
-            this.btnSortByName.Size = new System.Drawing.Size(100, 23);
-            this.btnSortByName.TabIndex = 3;
-            this.btnSortByName.Text = "Sort by Name";
-            this.btnSortByName.UseVisualStyleBackColor = true;
-            this.btnSortByName.Click += new System.EventHandler(this.btnSortByName_Click);
+            btnSortByName.Location = new Point(407, 18);
+            btnSortByName.Margin = new Padding(4, 5, 4, 5);
+            btnSortByName.Name = "btnSortByName";
+            btnSortByName.Size = new Size(133, 35);
+            btnSortByName.TabIndex = 3;
+            btnSortByName.Text = "Sort by Name";
+            btnSortByName.UseVisualStyleBackColor = true;
+            btnSortByName.Click += btnSortByName_Click;
             // 
             // btnSortByDueDate
             // 
-            this.btnSortByDueDate.Location = new System.Drawing.Point(411, 12);
-            this.btnSortByDueDate.Name = "btnSortByDueDate";
-            this.btnSortByDueDate.Size = new System.Drawing.Size(100, 23);
-            this.btnSortByDueDate.TabIndex = 4;
-            this.btnSortByDueDate.Text = "Sort by Due Date";
-            this.btnSortByDueDate.UseVisualStyleBackColor = true;
-            this.btnSortByDueDate.Click += new System.EventHandler(this.btnSortByDueDate_Click);
+            btnSortByDueDate.Location = new Point(548, 18);
+            btnSortByDueDate.Margin = new Padding(4, 5, 4, 5);
+            btnSortByDueDate.Name = "btnSortByDueDate";
+            btnSortByDueDate.Size = new Size(133, 35);
+            btnSortByDueDate.TabIndex = 4;
+            btnSortByDueDate.Text = "Sort by Due Date";
+            btnSortByDueDate.UseVisualStyleBackColor = true;
+            btnSortByDueDate.Click += btnSortByDueDate_Click;
             // 
             // lstTasks
             // 
-            this.lstTasks.FormattingEnabled = true;
-            this.lstTasks.Location = new System.Drawing.Point(12, 41);
-            this.lstTasks.Name = "lstTasks";
-            this.lstTasks.Size = new System.Drawing.Size(499, 290);
-            this.lstTasks.TabIndex = 5;
-            this.lstTasks.SelectedIndexChanged += new System.EventHandler(this.lstTasks_SelectedIndexChanged);
+            lstTasks.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lstTasks.FormattingEnabled = true;
+            lstTasks.Location = new Point(16, 63);
+            lstTasks.Margin = new Padding(4, 5, 4, 5);
+            lstTasks.Name = "lstTasks";
+            lstTasks.Size = new Size(664, 444);
+            lstTasks.TabIndex = 5;
+            lstTasks.SelectedIndexChanged += lstTasks_SelectedIndexChanged;
             // 
             // monthCalendar
             // 
-            this.monthCalendar.Location = new System.Drawing.Point(530, 41);
-            this.monthCalendar.Name = "monthCalendar";
-            this.monthCalendar.TabIndex = 6;
-            this.monthCalendar.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar_DateSelected);
+            monthCalendar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            monthCalendar.Location = new Point(688, 63);
+            monthCalendar.Margin = new Padding(12, 14, 12, 14);
+            monthCalendar.Name = "monthCalendar";
+            monthCalendar.TabIndex = 6;
+            monthCalendar.DateChanged += monthCalendar_DateChanged;
+            monthCalendar.DateSelected += monthCalendar_DateSelected;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 343);
-            this.Controls.Add(this.monthCalendar);
-            this.Controls.Add(this.lstTasks);
-            this.Controls.Add(this.btnSortByDueDate);
-            this.Controls.Add(this.btnSortByName);
-            this.Controls.Add(this.btnRemoveTask);
-            this.Controls.Add(this.btnMarkComplete);
-            this.Controls.Add(this.btnAddTask);
-            this.Name = "Form1";
-            this.Text = "ToDo List";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(912, 528);
+            Controls.Add(monthCalendar);
+            Controls.Add(lstTasks);
+            Controls.Add(btnSortByDueDate);
+            Controls.Add(btnSortByName);
+            Controls.Add(btnRemoveTask);
+            Controls.Add(btnMarkComplete);
+            Controls.Add(btnAddTask);
+            Margin = new Padding(4, 5, 4, 5);
+            MinimumSize = new Size(800, 400); // Set minimum size
+            Name = "Form1";
+            Text = "To Do List";
+            Load += Form1_Load;
+            ResumeLayout(false);
         }
     }
 }
-
-
