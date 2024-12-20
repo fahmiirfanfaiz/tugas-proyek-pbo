@@ -63,7 +63,7 @@ namespace TaskClass
 
         public List<TaskToDo> GetAllTasks()
         {
-            return tasks.ToList();
+            return _context.TaskToDos.ToList(); 
         }
     }
 }

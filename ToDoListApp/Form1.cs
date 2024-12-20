@@ -3,12 +3,14 @@ using System;
 using System.Windows.Forms;
 using TaskClass;
 using TaskClass.Models;
+using TaskSorter;
 
 namespace ToDoListApp
 {
     public partial class Form1 : Form
     {
         private TaskManager taskManager;
+        private TaskSorterService taskSorterService;
 
         public Form1()
         {
@@ -17,6 +19,7 @@ namespace ToDoListApp
             optionsBuilder.UseSqlServer("Data Source=LAPTOP-2D8G3I8L\\SQLEXPRESS;Initial Catalog=ToDoListDB;Integrated Security=True;Pooling=False;Encrypt=False;Trust Server Certificate=True");
             var context = new ToDoListDbContext(optionsBuilder.Options);
             taskManager = new TaskManager(context);
+            taskSorterService = new TaskSorterService();
             RefreshTaskList();
         }
 
@@ -27,7 +30,7 @@ namespace ToDoListApp
             {
                 taskManager.AddTask(
                     inputForm.Task.NameTask,
-                    inputForm.Task.Description ?? null,
+                    inputForm.Task.Description ?? string.Empty,
                     inputForm.Task.DueDate ?? DateTime.Today,
                     inputForm.Task.Category
                 );
@@ -66,7 +69,17 @@ namespace ToDoListApp
         private void RefreshTaskList()
         {
             lstTasks.Items.Clear();
-            foreach (var task in taskManager.GetAllTasks())
+            var tasks = taskManager.GetAllTasks();
+            var taskToDo2List = tasks.Select(t => new TaskToDo_2
+            {
+                NameTask = t.NameTask,
+                Description = t.Description,
+                DueDate = t.DueDate,
+                Category = t.Category,
+                IsComplete = t.IsComplete
+            }).ToList();
+            var sortedTasks = taskSorterService.GetSortedTasks(taskToDo2List);
+            foreach (var task in sortedTasks)
             {
                 lstTasks.Items.Add(task);
             }
@@ -102,7 +115,7 @@ namespace ToDoListApp
                     taskManager.EditTask(
                         selectedTask.Id,
                         inputForm.Task.NameTask,
-                        inputForm.Task.Description ?? null,
+                        inputForm.Task.Description ?? string.Empty,
                         inputForm.Task.DueDate ?? DateTime.Today, // Convert nullable to non-nullable
                         inputForm.Task.Category
                     );
@@ -115,7 +128,5 @@ namespace ToDoListApp
                 MessageBox.Show("Please select a task to edit.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-
     }
 }
