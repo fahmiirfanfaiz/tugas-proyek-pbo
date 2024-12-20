@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoListAPI", "ToDoListAPI\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskClassTest", "TaskManagerTest\TaskClassTest.csproj", "{BE2BC453-4B0C-4CFE-B82E-096F0C435620}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiagramEFMaker", "DiagramEFMaker\DiagramEFMaker.csproj", "{C3690FEF-7C8F-41C0-8073-F03BDABF9C04}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,10 @@ Global
 		{BE2BC453-4B0C-4CFE-B82E-096F0C435620}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE2BC453-4B0C-4CFE-B82E-096F0C435620}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE2BC453-4B0C-4CFE-B82E-096F0C435620}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3690FEF-7C8F-41C0-8073-F03BDABF9C04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3690FEF-7C8F-41C0-8073-F03BDABF9C04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3690FEF-7C8F-41C0-8073-F03BDABF9C04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3690FEF-7C8F-41C0-8073-F03BDABF9C04}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -35,13 +35,12 @@ namespace TaskClass
 
             try
             {
-                // Add to database
+                // Add to database first
                 await _context.TaskToDos.AddAsync(task);
                 await _context.SaveChangesAsync();
 
                 // Add to API
                 var response = await _httpClient.PostAsJsonAsync("api/Tasks", task);
-                response.EnsureSuccessStatusCode();
             }
             catch (HttpRequestException ex)
             {
@@ -56,6 +55,7 @@ namespace TaskClass
                 throw;
             }
         }
+
 
         /// <summary>
         /// Edits an existing task in the database and API.
@@ -76,7 +76,6 @@ namespace TaskClass
 
                     // Update in API
                     var response = await _httpClient.PutAsJsonAsync($"api/Tasks/{id}", task);
-                    response.EnsureSuccessStatusCode();
                 }
                 catch (HttpRequestException ex)
                 {
@@ -109,7 +108,6 @@ namespace TaskClass
 
                     // Update in API
                     var response = await _httpClient.PutAsync($"api/Tasks/Complete/{id}", null);
-                    response.EnsureSuccessStatusCode();
                 }
                 catch (HttpRequestException ex)
                 {
@@ -142,7 +140,6 @@ namespace TaskClass
 
                     // Remove from API
                     var response = await _httpClient.DeleteAsync($"api/Tasks/{id}");
-                    response.EnsureSuccessStatusCode();
                 }
                 catch (HttpRequestException ex)
                 {

@@ -8,10 +8,10 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using TaskClass.Models;
-using TaskClass;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 using Moq.Protected;
+using TaskClass;
 
 namespace TaskClassTest
 {

@@ -2,8 +2,8 @@ using System;
 using System.Windows.Forms;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using TaskClass.Models;
 using TaskClass;
+using TaskClass.Models;
 using TaskSorterClass;
 
 namespace ToDoListApp
