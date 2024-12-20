@@ -31,7 +31,34 @@ namespace ToDoListApp
             taskManager = new TaskManager(httpClient, context);
             taskSorter = new TaskSorter();
             RefreshTaskList();
+
+            // Set form background color
+            this.BackColor = System.Drawing.Color.LightBlue;
+
+            // Customize buttons
+            foreach (Control control in this.Controls)
+            {
+                if (control is Button button)
+                {
+                    button.BackColor = System.Drawing.Color.SteelBlue;
+                    button.ForeColor = System.Drawing.Color.White;
+                    button.FlatStyle = FlatStyle.Flat;
+                    button.FlatAppearance.BorderColor = System.Drawing.Color.DarkBlue;
+                }
+            }
+
+            // Customize list box
+            lstTasks.BackColor = System.Drawing.Color.AliceBlue;
+            lstTasks.ForeColor = System.Drawing.Color.DarkBlue;
+            lstTasks.BorderStyle = BorderStyle.FixedSingle;
+
+            // Customize other controls as needed
+            // Example: monthCalendar
+            monthCalendar.TitleBackColor = System.Drawing.Color.SteelBlue;
+            monthCalendar.TitleForeColor = System.Drawing.Color.White;
+            monthCalendar.TrailingForeColor = System.Drawing.Color.DarkBlue;
         }
+
 
         private async void btnAddTask_Click(object sender, EventArgs e)
         {
@@ -156,7 +183,7 @@ namespace ToDoListApp
 
         private void monthCalendar_DateSelected(object sender, DateRangeEventArgs e)
         {
-            // Handle date selection if needed
+            
         }
 
         private void monthCalendar_DateChanged(object sender, DateRangeEventArgs e)
