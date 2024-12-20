@@ -1,47 +1,88 @@
-using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Net.Http.Json;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using TaskClass;
 using TaskClass.Models;
 
 namespace ToDoListApp
 {
     public partial class Form1 : Form
     {
-        private TaskManager taskManager;
-
         public Form1()
         {
             InitializeComponent();
-            var optionsBuilder = new DbContextOptionsBuilder<ToDoListDbContext>();
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-2D8G3I8L\\SQLEXPRESS;Initial Catalog=ToDoListDB;Integrated Security=True;Pooling=False;Encrypt=False;Trust Server Certificate=True");
-            var context = new ToDoListDbContext(optionsBuilder.Options);
-            taskManager = new TaskManager(context);
             RefreshTaskList();
         }
 
-        private void btnAddTask_Click(object sender, EventArgs e)
+        private async void RefreshTaskList()
+        {
+            lstTasks.Items.Clear();
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5000/api/");
+                var response = await client.GetAsync("Tasks");
+                if (response.IsSuccessStatusCode)
+                {
+                    var tasks = await response.Content.ReadFromJsonAsync<List<TaskToDo>>();
+                    if (tasks != null)
+                    {
+                        foreach (var task in tasks)
+                        {
+                            lstTasks.Items.Add(task);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Failed to load tasks.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private async void btnAddTask_Click(object sender, EventArgs e)
         {
             var inputForm = new FormInputTask();
             if (inputForm.ShowDialog() == DialogResult.OK)
             {
-                taskManager.AddTask(
-                    inputForm.Task.NameTask,
-                    inputForm.Task.Description ?? null,
-                    inputForm.Task.DueDate ?? DateTime.Today,
-                    inputForm.Task.Category
-                );
-                RefreshTaskList();
+                using (HttpClient client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://localhost:5000/api/");
+                    var response = await client.PostAsJsonAsync("Tasks", inputForm.Task);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Task added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefreshTaskList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to add task.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
 
-        private void btnMarkComplete_Click(object sender, EventArgs e)
+        private async void btnMarkComplete_Click(object sender, EventArgs e)
         {
             if (lstTasks.SelectedItem != null)
             {
                 TaskToDo selectedTask = (TaskToDo)lstTasks.SelectedItem;
-                taskManager.MarkTaskAsComplete(selectedTask.Id);
-                RefreshTaskList();
+
+                using (HttpClient client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://localhost:5000/api/");
+                    var response = await client.PutAsync($"Tasks/Complete/{selectedTask.Id}", null);
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Task marked as complete!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefreshTaskList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to mark task as complete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
             {
@@ -49,13 +90,26 @@ namespace ToDoListApp
             }
         }
 
-        private void btnRemoveTask_Click(object sender, EventArgs e)
+        private async void btnRemoveTask_Click(object sender, EventArgs e)
         {
             if (lstTasks.SelectedItem != null)
             {
                 TaskToDo selectedTask = (TaskToDo)lstTasks.SelectedItem;
-                taskManager.RemoveTask(selectedTask.Id);
-                RefreshTaskList();
+
+                using (HttpClient client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://localhost:5000/api/");
+                    var response = await client.DeleteAsync($"Tasks/{selectedTask.Id}");
+                    if (response.IsSuccessStatusCode)
+                    {
+                        MessageBox.Show("Task removed successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        RefreshTaskList();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Failed to remove task.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
             else
             {
@@ -63,51 +117,39 @@ namespace ToDoListApp
             }
         }
 
-        private void RefreshTaskList()
-        {
-            lstTasks.Items.Clear();
-            foreach (var task in taskManager.GetAllTasks())
-            {
-                lstTasks.Items.Add(task);
-            }
-        }
-
-        private void lstTasks_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Edit_Click(object sender, EventArgs e)
+        private async void Edit_Click(object sender, EventArgs e)
         {
             if (lstTasks.SelectedItem != null)
             {
-                // Retrieve the selected task
                 TaskToDo selectedTask = (TaskToDo)lstTasks.SelectedItem;
 
-                // Open FormInputTask with the selected task data
                 var inputForm = new FormInputTask
                 {
                     Task = new TaskToDo(
                         selectedTask.Id,
                         selectedTask.NameTask,
                         selectedTask.Description,
-                        selectedTask.DueDate ?? DateTime.Today, // Convert nullable to non-nullable
+                        selectedTask.DueDate ?? DateTime.Today,
                         selectedTask.Category
                     )
                 };
 
                 if (inputForm.ShowDialog() == DialogResult.OK)
                 {
-                    // Update the task with the new data
-                    taskManager.EditTask(
-                        selectedTask.Id,
-                        inputForm.Task.NameTask,
-                        inputForm.Task.Description ?? null,
-                        inputForm.Task.DueDate ?? DateTime.Today, // Convert nullable to non-nullable
-                        inputForm.Task.Category
-                    );
-
-                    RefreshTaskList();
+                    using (HttpClient client = new HttpClient())
+                    {
+                        client.BaseAddress = new Uri("http://localhost:5000/api/");
+                        var response = await client.PutAsJsonAsync($"Tasks/{selectedTask.Id}", inputForm.Task);
+                        if (response.IsSuccessStatusCode)
+                        {
+                            MessageBox.Show("Task updated successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            RefreshTaskList();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to update task.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
                 }
             }
             else
@@ -116,6 +158,9 @@ namespace ToDoListApp
             }
         }
 
-
+        private void lstTasks_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Tambahkan logika inisialisasi jika diperlukan.
+        }
     }
 }

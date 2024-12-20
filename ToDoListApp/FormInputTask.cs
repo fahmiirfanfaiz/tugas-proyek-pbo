@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-using TaskClass;
 using TaskClass.Models;
 
 namespace ToDoListApp
@@ -17,12 +16,14 @@ namespace ToDoListApp
 
         private void InitializeFormFields()
         {
+            // Tambahkan kategori default
             comboBoxCategory.Items.AddRange(new string[] { "Personal", "Work", "School", "Other" });
             comboBoxCategory.SelectedIndex = 0; // Default category
             dateTimePickerDueDate.ShowCheckBox = true;
+            dateTimePickerDueDate.Checked = false; // Default tidak memilih tanggal
         }
 
-        // Method to validate input fields
+        // Validasi input sebelum menyimpan
         private bool ValidateInput()
         {
             if (string.IsNullOrWhiteSpace(txtNameTask.Text))
@@ -30,22 +31,28 @@ namespace ToDoListApp
                 MessageBox.Show("Task name cannot be empty.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+            if (comboBoxCategory.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a category.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            // Validate the input fields before saving
+            // Validasi input
             if (!ValidateInput())
                 return;
 
-            // Create a new task with the values from the input fields
+            // Buat task baru berdasarkan input
             Task = new TaskToDo
             {
-                NameTask = txtNameTask.Text,
-                Description = string.IsNullOrWhiteSpace(txtDescription.Text) ? null : txtDescription.Text,
+                NameTask = txtNameTask.Text.Trim(),
+                Description = string.IsNullOrWhiteSpace(txtDescription.Text) ? null : txtDescription.Text.Trim(),
                 DueDate = dateTimePickerDueDate.Checked ? dateTimePickerDueDate.Value : (DateTime?)null,
-                Category = comboBoxCategory.Text
+                Category = comboBoxCategory.SelectedItem.ToString(),
+                IsComplete = false // Default task belum selesai
             };
 
             this.DialogResult = DialogResult.OK;
@@ -58,20 +65,20 @@ namespace ToDoListApp
             this.Close();
         }
 
-        private void FormInputTask_Load(object sender, EventArgs e)
+        private void txtNameTask_TextChanged(object sender, EventArgs e)
         {
-
+            // Tambahkan logika di sini jika diperlukan.
         }
 
         private void txtDescription_TextChanged(object sender, EventArgs e)
         {
-
+            // Tambahkan logika di sini jika diperlukan.
         }
 
-        private void txtNameTask_TextChanged(object sender, EventArgs e)
+        private void FormInputTask_Load(object sender, EventArgs e)
         {
-
+            // Tambahkan logika inisialisasi jika diperlukan.
         }
+
     }
 }
-

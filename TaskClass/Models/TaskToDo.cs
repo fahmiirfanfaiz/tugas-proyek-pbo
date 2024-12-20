@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization; // Untuk kontrol JSON serialization
 
 namespace TaskClass.Models
 {
@@ -8,23 +9,22 @@ namespace TaskClass.Models
         [Key]
         public int Id { get; set; }
 
-        // Nama task (wajib diisi)
         [Required]
+        [JsonPropertyName("task_name")] // JSON key saat dikirim/diterima adalah "task_name"
         public string NameTask { get; set; }
 
-        // Deskripsi task (bisa null)
+        [JsonPropertyName("description")]
         public string? Description { get; set; }
 
-        // Tanggal jatuh tempo (bisa null)
+        [JsonPropertyName("due_date")]
         public DateTime? DueDate { get; set; }
 
-        // Kategori task
+        [JsonPropertyName("category")]
         public string Category { get; set; }
 
-        // Status apakah task sudah selesai
+        [JsonPropertyName("is_complete")]
         public bool IsComplete { get; set; }
 
-        // Constructor dengan parameter untuk mempermudah inisialisasi
         public TaskToDo(int id, string nameTask, string? description, DateTime? dueDate, string category)
         {
             Id = id;
@@ -32,13 +32,11 @@ namespace TaskClass.Models
             Description = description;
             DueDate = dueDate;
             Category = category;
-            IsComplete = false; // Default status task adalah belum selesai
+            IsComplete = false;
         }
 
-        // Constructor default (dibutuhkan oleh Entity Framework)
         public TaskToDo() { }
 
-        // Override ToString untuk tampilan yang lebih jelas saat debugging
         public override string ToString()
         {
             return $"{NameTask} - {Description} - Due: {DueDate?.ToShortDateString() ?? "No due date"} - Category: {Category} - {IsComplete}";
