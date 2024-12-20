@@ -32,13 +32,13 @@ namespace ToDoListApp
             services.AddDbContext<ToDoListDbContext>(options =>
                 options.UseSqlServer("Data Source=LAPTOP-2D8G3I8L\\SQLEXPRESS;Initial Catalog=ToDoListDB;Integrated Security=True;Pooling=False;Encrypt=False;Trust Server Certificate=True"));
 
-            // Tambahkan HttpClient untuk TaskManager
+            // HttpClient untuk TaskManager
             services.AddHttpClient<TaskManager>(client =>
             {
                 client.BaseAddress = new Uri("http://localhost:5000/api/");
             });
 
-            // Tambahkan layanan lainnya
+            // Layanan lainnya
             services.AddScoped<TaskSorter>();
             services.AddScoped<TaskManager>();
 

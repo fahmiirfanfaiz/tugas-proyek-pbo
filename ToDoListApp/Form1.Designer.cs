@@ -8,7 +8,7 @@
         private System.Windows.Forms.Button btnRemoveTask;
         private System.Windows.Forms.Button btnSortByName;
         private System.Windows.Forms.Button btnSortByDueDate;
-        private System.Windows.Forms.Button btnEditTask; // Add this line
+        private System.Windows.Forms.Button btnEditTask;
         private System.Windows.Forms.ListBox lstTasks;
         private System.Windows.Forms.MonthCalendar monthCalendar;
 
@@ -90,7 +90,7 @@
             // 
             // btnEditTask
             // 
-            btnEditTask.Location = new Point(689, 18); // Set the location
+            btnEditTask.Location = new Point(689, 18);
             btnEditTask.Margin = new Padding(4, 5, 4, 5);
             btnEditTask.Name = "btnEditTask";
             btnEditTask.Size = new Size(133, 35);
@@ -127,7 +127,7 @@
             ClientSize = new Size(912, 528);
             Controls.Add(monthCalendar);
             Controls.Add(lstTasks);
-            Controls.Add(btnEditTask); // Add this line
+            Controls.Add(btnEditTask);
             Controls.Add(btnSortByDueDate);
             Controls.Add(btnSortByName);
             Controls.Add(btnRemoveTask);

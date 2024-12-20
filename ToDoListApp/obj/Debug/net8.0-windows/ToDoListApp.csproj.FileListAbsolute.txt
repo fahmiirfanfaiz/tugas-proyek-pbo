@@ -219,6 +219,7 @@ C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\Microsoft.IdentityModel.Tokens.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\Microsoft.SqlServer.Server.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\Mono.TextTemplating.dll
+C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\Package.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\System.Data.SQLite.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\System.ClientModel.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\System.Composition.AttributedModel.dll
@@ -318,7 +319,6 @@ C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
-C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\Package.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\TaskClass.dll
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\bin\Debug\net8.0-windows\TaskClass.pdb
 C:\Users\fadel\Fadel\Code\tugas-proyek-pbo\ToDoListApp\obj\Debug\net8.0-windows\ToDoListApp.csproj.AssemblyReference.cache
