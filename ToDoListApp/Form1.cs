@@ -13,25 +13,19 @@ namespace ToDoListApp
 {
     public partial class Form1 : Form
     {
-        private TaskManager taskManager;
-        private TaskSorter taskSorter;
+        private readonly TaskManager taskManager;
+        private readonly TaskSorter taskSorter;
 
-        public Form1()
+        public Form1(TaskManager taskManager, TaskSorter taskSorter)
         {
             InitializeComponent();
-            var optionsBuilder = new DbContextOptionsBuilder<ToDoListDbContext>();
-            optionsBuilder.UseSqlServer("Data Source=LAPTOP-2D8G3I8L\\SQLEXPRESS;Initial Catalog=ToDoListDB;Integrated Security=True;Pooling=False;Encrypt=False;Trust Server Certificate=True");
-            var context = new ToDoListDbContext(optionsBuilder.Options);
+            this.taskManager = taskManager;
+            this.taskSorter = taskSorter;
 
-            var httpClient = new HttpClient
-            {
-                BaseAddress = new Uri("http://localhost:5000/api/")
-            };
-
-            taskManager = new TaskManager(httpClient, context);
-            taskSorter = new TaskSorter();
-            RefreshTaskList();
+            // Refresh task list on load
+            RefreshTaskList().ConfigureAwait(false);
         }
+
 
         private async void btnAddTask_Click(object sender, EventArgs e)
         {
